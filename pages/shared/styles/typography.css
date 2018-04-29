@@ -64,7 +64,6 @@ h5,
 h6 {
   font-family: var(--typography-display-font);
   font-weight: 400;
-  text-transform: uppercase;
   line-height: 1.1;
 }
 

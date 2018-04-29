@@ -1,0 +1,54 @@
+import React from 'react';
+import Document, { Head, Main, NextScript } from 'next/document';
+
+class MainDocument extends Document {
+  render() {
+    return (
+      <html>
+        <Head>
+          <title>project-name</title>
+          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+          <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1" />
+          <meta name="HandheldFriendly" content="True" />
+          <meta name="MobileOptimized" content="320" />
+          <meta name="apple-mobile-web-app-title" content="project-name" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="apple-touch-fullscreen" content="yes" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+          <meta name="application-name" content="project-name" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/_next/static/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" href="/_next/static/android-chrome-192x192.png" sizes="192x192" />
+          <link rel="icon" type="image/png" href="/_next/static/android-chrome-512x512.png" sizes="512x512" />
+          <link rel="icon" type="image/png" href="/_next/static/favicon-32x32.png" sizes="32x32" />
+          <link rel="icon" type="image/png" href="/_next/static/favicon-16x16.png" sizes="16x16" />
+          <link rel="shortcut icon" href="/_next/static/favicon.ico" />
+          <link rel="manifest" href="/_next/static/manifest.json" />
+          <link rel="mask-icon" href="/_next/static/safari-pinned-tab.svg" color="#ffffff" />
+          <meta name="msapplication-TileColor" content="#ffffff" />
+          <meta name="msapplication-TileImage" content="/_next/static/mstile-150x150.png" />
+          <meta name="msapplication-config" content="/_next/static/browserconfig.xml" />
+          <meta name="theme-color" content="#ffffff" />
+          <style>
+            {'/* INPUT CRITICAL CSS */'}
+          </style>
+          <link rel="stylesheet" href="/_next/static/style.css" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+          <script dangerouslySetInnerHTML={{
+ __html: `(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA', 'auto');
+            ga('send', 'pageview');`,
+}}>
+          </script>
+        </body>
+      </html>
+    );
+  }
+}
+
+export default MainDocument;

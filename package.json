@@ -1,0 +1,92 @@
+{
+  "name": "project-name",
+  "version": "1.0.0",
+  "description": "The https://project-domain.com web app",
+  "keywords": [
+    "react",
+    "next.js",
+    "web",
+    "app",
+    "www"
+  ],
+  "author": "PICUS <hello@picus.pt>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test sequelize --seeders-path=./server/seeders db:seed:all && cross-env NODE_ENV=test testcafe chrome --app \"node server.js\" --screenshots=./tests/screenshots",
+    "test:mobile": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test testcafe \"chrome:emulation:device=iphone 6\" --app \"node server.js\" --screenshots=./tests/screenshots",
+    "db:migrate": "sequelize --migrations-path=./server/migrations db:migrate",
+    "dev": "cross-env NODE_ENV=development node server.js",
+    "build": "next build",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "lint": "eslint --fix . && stylelint --fix \"**/*.css\"",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "analyze": "cross-env ANALYZE=1 next build"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "dependencies": {
+    "assert": "^1.4.1",
+    "bcrypt": "2.0.1",
+    "cross-env": "^5.0.1",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "express-validator": "^5.1.2",
+    "isomorphic-fetch": "^2.2.1",
+    "mysql2": "^1.5.3",
+    "next": "^5.1.0",
+    "next-redux-wrapper": "^1.3.5",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0",
+    "sequelize": "^4.37.6",
+    "sequelize-cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^6.1.0",
+    "@commitlint/config-conventional": "^6.1.0",
+    "@zeit/next-css": "^0.1.5",
+    "browserslist-config-google": "^1.5.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-react": "^7.7.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.4",
+    "postcss": "^6.0.21",
+    "postcss-conditionals": "^2.1.0",
+    "postcss-css-variables": "^0.8.1",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-for": "^2.1.1",
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.1.4",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^3.0.0",
+    "stylelint": "^9.2.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^0.8.1",
+    "testcafe": "^0.19.2",
+    "webpack-bundle-analyzer": "^2.8.3"
+  },
+  "engines": {
+    "node": ">=8.11.1"
+  }
+}

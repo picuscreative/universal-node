@@ -1,0 +1,36 @@
+/* stylelint-disable no-duplicate-selectors */
+
+/* ==========================================================================
+  Colors
+========================================================================== */
+
+/*
+  See: https://davidwalsh.name/sass-color-variables-dont-suck
+  http://chir.ag/projects/name-that-color
+*/
+
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-alabaster: #f7f7f7;
+  --color-amaranth: #e52424;
+  --color-violet: #280d45;
+  --color-gallery: #ececec;
+}
+
+/* ==========================================================================
+  Typography
+========================================================================== */
+
+:root {
+  --typography-display-font: Helvetica, sans-serif;
+  --typography-text-font: Helvetica, sans-serif;
+}
+
+/* ==========================================================================
+  Layout vars
+========================================================================== */
+
+:root {
+  --layout-header-height: 50px;
+}

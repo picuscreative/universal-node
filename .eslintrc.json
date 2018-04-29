@@ -1,0 +1,28 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "import/no-dynamic-require": 0,
+    "class-methods-use-this": [2, {
+      "exceptMethods": [
+        "render"
+      ]
+    }]
+  }
+}

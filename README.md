@@ -29,6 +29,7 @@ PICUS' template for universal Node/React applications. It offers you the require
     - [test](#test)
     - [lint](#lint)
 - [Environment variables](#environment-variables)
+- [Browserl.ist](#browserlist)
 
 
 ## Installation and setup

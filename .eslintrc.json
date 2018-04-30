@@ -10,14 +10,19 @@
     "plugin:react/recommended"
   ],
   "plugins": [
-    "react"
+    "react",
+    "compat"
   ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     }
   },
+  "settings": {
+    "polyfills": ["fetch"]
+  },
   "rules": {
+    "compat/compat": "error",
     "import/no-dynamic-require": 0,
     "class-methods-use-this": [2, {
       "exceptMethods": [

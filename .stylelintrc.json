@@ -1,9 +1,14 @@
 {
   "extends": "stylelint-config-standard",
   "plugins": [
-    "stylelint-order"
+    "stylelint-order",
+    "stylelint-no-unsupported-browser-features"
   ],
   "rules": {
+    "plugin/no-unsupported-browser-features": [true, {
+      "browsers": ["> 3%", "Chrome >= 58", "Firefox >= 58", "Explorer >= 10", "iOS >= 9.0"],
+      "severity": "warning"
+    }],
     "selector-pseudo-class-no-unknown": [true, {
       "ignorePseudoClasses": ["global"]
     }],

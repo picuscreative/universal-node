@@ -16,6 +16,7 @@
     "test": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test sequelize --seeders-path=./server/seeders db:seed:all && cross-env NODE_ENV=test testcafe chrome --app \"node server.js\" --screenshots=./tests/screenshots",
     "test:mobile": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test testcafe \"chrome:emulation:device=iphone 6\" --app \"node server.js\" --screenshots=./tests/screenshots",
     "db:migrate": "sequelize --migrations-path=./server/migrations db:migrate",
+    "db:migrate:seeds": "sequelize --migrations-path=./server/migrations db:migrate && sequelize --seeders-path=./server/seeders db:seed:all",
     "dev": "cross-env NODE_ENV=development node server.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
@@ -44,6 +45,7 @@
     "bcrypt": "2.0.1",
     "cross-env": "^5.0.1",
     "dotenv": "^5.0.1",
+    "es6-promise": "^4.2.4",
     "express": "^4.16.3",
     "express-validator": "^5.1.2",
     "isomorphic-fetch": "^2.2.1",
@@ -63,9 +65,9 @@
     "@commitlint/cli": "^6.1.0",
     "@commitlint/config-conventional": "^6.1.0",
     "@zeit/next-css": "^0.1.5",
-    "browserslist-config-google": "^1.5.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-compat": "^2.2.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
@@ -80,10 +82,12 @@
     "postcss-mixins": "^6.2.0",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0",
+    "stylelint-no-unsupported-browser-features": "^3.0.0",
     "stylelint-order": "^0.8.1",
     "testcafe": "^0.19.2",
     "webpack-bundle-analyzer": "^2.8.3"
   },
+  "browserslist": ["> 3%", "Chrome >= 58", "Firefox >= 58", "Explorer >= 10", "iOS >= 9.0"],
   "engines": {
     "node": ">=8.11.1"
   }

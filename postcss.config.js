@@ -12,7 +12,7 @@ module.exports = {
     'postcss-cssnext': {
       features: {
         customProperties: false,
-        browsers: ['extends browserslist-config-google'],
+        browsers: ['> 3%', 'Chrome >= 58', 'Firefox >= 58', 'Explorer >= 10', 'iOS >= 9.0'],
         autoprefixer: {
           remove: false,
         },

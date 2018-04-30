@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const withCSS = require('@zeit/next-css');
 
 module.exports = withCSS({
-  distDir: '/public/dist',
+  distDir: 'public/dist',
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 1,

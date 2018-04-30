@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import App from './components/App';
 import Head from './components/Head';
@@ -19,7 +20,7 @@ class Index extends PureComponent {
       <App>
         <Head title="index page" description="This is an example of a meta description for index page."/>
         <h1>project-name</h1>
-        <p>Hello {user.email}</p>
+        <p>Hello {user.email} from <Link href="/about"><a>PICUS</a></Link></p>
       </App>
     );
   }

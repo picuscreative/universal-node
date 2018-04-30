@@ -70,7 +70,7 @@ Starts a production server. You must run `npm run build` before running this com
 $ npm test
 ```
 
-Runs the project User Acceptance Tests using [**TestCafé**](http://devexpress.github.io/testcafe/).
+Runs the project's User Acceptance Tests using [TestCafé](http://devexpress.github.io/testcafe/).
 
 ### lint
 
@@ -78,10 +78,9 @@ Runs the project User Acceptance Tests using [**TestCafé**](http://devexpress.g
 $ npm run lint
 ```
 
-Runs **ESlint** and **Stylelint** on the project.
-Please run `npm run lint -- -h` for more options.
+Runs [ESlint](https://eslint.org/) and [Stylelint](https://stylelint.io/) on the project.
 
-We use conventional commit messages: [**commitlint/config-conventional**]https://github.com/marionebl/commitlint/tree/master/%40commitlint/config-conventional
+We use conventional commit messages: [commitlint/config-conventional](https://github.com/marionebl/commitlint/tree/master/%40commitlint/config-conventional).
 
 ## Environment variables
 
@@ -109,7 +108,7 @@ If you need custom environment variables, you must prefix them with `REACT_APP_`
 ### .env file
 
 Environment variables defined on `.env` file will be loaded into `process.env`.
-Please read [**dotenv**](https://github.com/motdotla/dotenv) documentation for more information.
+Please read [dotenv](https://github.com/motdotla/dotenv) documentation for more information.
 
 ```
 REACT_APP_FOO=bar

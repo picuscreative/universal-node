@@ -1,12 +1,11 @@
-<img width="110" src="https://avatars3.githubusercontent.com/u/38539999?s=200&v=4g" />
+[<img width="110" src="https://avatars3.githubusercontent.com/u/38539999?s=200&v=4g" />](https://picuscreative.com)
 
 # universal-node
 
 PICUS' template for universal Node/React applications. It offers you the required tooling for your universal JavaScript application, as well as an opinionated full-stack ready to kick-off your next project.
 
-[david-dm-image]:https://img.shields.io/david/picuscreative/universal-node.svg
-[david-dm-dev-url]:https://david-dm.org/picuscreative/universal-node?type=dev
-[david-dm-dev-image]:https://img.shields.io/david/dev/picuscreative/universal-node.svg
+[<img src="https://img.shields.io/david/picuscreative/universal-node.svg" />](https://david-dm.org/picuscreative/universal-node)
+[<img src="https://img.shields.io/david/dev/picuscreative/universal-node.svg" />](https://david-dm.org/picuscreative/universal-node?type=dev)
 
 
 ## What’s Included?

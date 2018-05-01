@@ -1,7 +1,6 @@
 .next
 public/dist
-tests/screenshots/thumbnails
-tests/screenshots/*.png
+tests/screenshots/**/*.png
 node_modules
 npm-debug.*
 .env

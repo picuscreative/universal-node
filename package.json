@@ -13,8 +13,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test sequelize --seeders-path=./server/seeders db:seed:all && cross-env NODE_ENV=test testcafe chrome --app \"node server.js\" --screenshots=./tests/screenshots",
-    "test:mobile": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test testcafe \"chrome:emulation:device=iphone 6\" --app \"node server.js\" --screenshots=./tests/screenshots",
+    "test": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test sequelize --seeders-path=./server/seeders db:seed:all && cross-env NODE_ENV=test testcafe chrome:headless tests/ --screenshots=./tests/screenshots/desktop",
+    "test:mobile": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test sequelize --seeders-path=./server/seeders db:seed:all && cross-env NODE_ENV=test testcafe \"chrome:headless:emulation:device=iphone 6\" tests/ --screenshots=./tests/screenshots/mobile",
     "db:migrate": "sequelize --migrations-path=./server/migrations db:migrate",
     "db:migrate:seeds": "sequelize --migrations-path=./server/migrations db:migrate && sequelize --seeders-path=./server/seeders db:seed:all",
     "dev": "cross-env NODE_ENV=development node server.js",

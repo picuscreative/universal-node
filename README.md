@@ -81,7 +81,9 @@ Starts a production server. You must run `npm run build` before running this com
 $ npm test
 ```
 
-Runs the project's User Acceptance Tests using [TestCafé](http://devexpress.github.io/testcafe/).
+Runs the project's User Acceptance Tests using [TestCafé](http://devexpress.github.io/testcafe/) for desktop environment. There is a version `npm run test:mobile` to be used for mobile environments, feel free to change the current emulation settings in `package.json`.
+
+**Note**: It's mandatory that a server process is already running via [npm run dev](#dev) or [npm start](#start) before executing the test suite.
 
 ### lint
 

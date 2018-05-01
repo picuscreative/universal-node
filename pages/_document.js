@@ -15,22 +15,22 @@ class MainDocument extends Document {
           <meta name="apple-touch-fullscreen" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
           <meta name="application-name" content="project-name" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/_next/static/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" href="/_next/static/android-chrome-192x192.png" sizes="192x192" />
-          <link rel="icon" type="image/png" href="/_next/static/android-chrome-512x512.png" sizes="512x512" />
-          <link rel="icon" type="image/png" href="/_next/static/favicon-32x32.png" sizes="32x32" />
-          <link rel="icon" type="image/png" href="/_next/static/favicon-16x16.png" sizes="16x16" />
-          <link rel="shortcut icon" href="/_next/static/favicon.ico" />
-          <link rel="manifest" href="/_next/static/manifest.json" />
-          <link rel="mask-icon" href="/_next/static/safari-pinned-tab.svg" color="#ffffff" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/dist/static/images/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" href="/dist/static/images/android-chrome-192x192.png" sizes="192x192" />
+          <link rel="icon" type="image/png" href="/dist/static/images/android-chrome-512x512.png" sizes="512x512" />
+          <link rel="icon" type="image/png" href="/dist/static/images/favicon-32x32.png" sizes="32x32" />
+          <link rel="icon" type="image/png" href="/dist/static/images/favicon-16x16.png" sizes="16x16" />
+          <link rel="shortcut icon" href="/dist/static/images/favicon.ico" />
+          <link rel="manifest" href="/dist/static/images/manifest.json" />
+          <link rel="mask-icon" href="/dist/static/images/safari-pinned-tab.svg" color="#ffffff" />
           <meta name="msapplication-TileColor" content="#ffffff" />
-          <meta name="msapplication-TileImage" content="/_next/static/mstile-150x150.png" />
-          <meta name="msapplication-config" content="/_next/static/browserconfig.xml" />
+          <meta name="msapplication-TileImage" content="/dist/static/images/mstile-150x150.png" />
+          <meta name="msapplication-config" content="/dist/static/images/browserconfig.xml" />
           <meta name="theme-color" content="#ffffff" />
           <style>
             {'/* INPUT CRITICAL CSS */'}
           </style>
-          <link rel="stylesheet" href="/_next/static/style.css" />
+          <link rel="stylesheet" href="/dist/static/style.css" />
         </Head>
         <body>
           <Main />

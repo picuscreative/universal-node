@@ -12,6 +12,7 @@ app.prepare()
   .then(() => {
     const server = express();
     server.use(expressValidator());
+    server.use(express.static('public'));
 
     server.use('/api', controllers);
     server.get('*', (req, res) => handle(req, res));

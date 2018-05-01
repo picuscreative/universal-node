@@ -7,18 +7,19 @@ import shared from '../shared/styles/index.css';
 
 class App extends PureComponent {
   render() {
-    const { children } = this.props;
+    const { className, children } = this.props;
 
     return (
-      <div>
+      <div className={ className }>
         <Header />
-        {children}
+        { children }
       </div>
     );
   }
 }
 
 App.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.array,
 };
 

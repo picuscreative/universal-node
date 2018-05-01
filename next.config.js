@@ -40,6 +40,30 @@ module.exports = withCSS({
           },
         ],
       },
+      // SVGs
+      {
+        test: /\.svg$/,
+        use: [
+          require.resolve('raw-loader'),
+          {
+            loader: require.resolve('svgo-loader'),
+            options: {
+              plugins: [
+                { removeTitle: true },
+                { removeDimensions: true },
+                { cleanupIDs: false },
+              ],
+            },
+          },
+          // Uniquify classnames and ids so they don't conflict with eachother
+          {
+            loader: require.resolve('svg-css-modules-loader'),
+            options: {
+              transformId: true,
+            },
+          },
+        ],
+      },
       // Web fonts
       {
         test: /\.(eot|ttf|woff|woff2|otf)$/,

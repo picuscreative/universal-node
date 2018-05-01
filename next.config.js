@@ -12,7 +12,7 @@ module.exports = withCSS({
     localIdentName: '[local]___[hash:base64:5]',
   },
   webpack(config, options) {
-    const { isServer } = options;
+    const { dev, isServer } = options;
 
     if (!isServer) {
       const envVariables = {};
@@ -23,6 +23,38 @@ module.exports = withCSS({
         });
       config.plugins.push(new webpack.EnvironmentPlugin(envVariables));
     }
+
+    config.module.rules.push(
+      // Raster images (png, jpg, etc)
+      {
+        test: /\.(png|jpg|jpeg|gif|webp)$/,
+        exclude: [/\.svg$/, 'pages/shared/media/fonts'],
+        use: [
+          {
+            loader: require.resolve('file-loader'),
+            options: {
+              publicPath: '/dist/static/images',
+              outputPath: 'static/images',
+              name: dev ? '[name].[ext]' : '[name].[hash:15].[ext]',
+            },
+          },
+        ],
+      },
+      // Web fonts
+      {
+        test: /\.(eot|ttf|woff|woff2|otf)$/,
+        use: [
+          {
+            loader: require.resolve('file-loader'),
+            options: {
+              publicPath: '/dist/static/fonts',
+              outputPath: 'static/fonts',
+              name: dev ? '[name].[ext]' : '[name].[hash:15].[ext]',
+            },
+          },
+        ],
+      },
+    );
 
     return config;
   },

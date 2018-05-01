@@ -70,6 +70,7 @@
     "eslint-plugin-compat": "^2.2.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-react": "^7.7.0",
+    "file-loader": "^1.1.11",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
     "postcss": "^6.0.21",
@@ -87,7 +88,14 @@
     "testcafe": "^0.19.2",
     "webpack-bundle-analyzer": "^2.8.3"
   },
-  "browserslist": ["> 3%", "Chrome >= 58", "Firefox >= 58", "Edge >= 16", "Explorer >= 10", "iOS >= 9.0"],
+  "browserslist": [
+    "> 3%",
+    "Chrome >= 58",
+    "Firefox >= 58",
+    "Edge >= 16",
+    "Explorer >= 10",
+    "iOS >= 9.0"
+  ],
   "engines": {
     "node": ">=8.11.1"
   }

@@ -9,13 +9,16 @@
 ========================================================================== */
 
 /* @font-face {
-    font-family: "CustomFont";
-    font-weight: 800;
-    font-style: normal;
-    src:
-      url("shared/media/fonts/custom-font/CustomFont.woff2") format("woff2"),
-      url("shared/media/fonts/custom-font/CustomFont.woff") format("woff"),
-      url("shared/media/fonts/custom-font/CustomFont.eot") format("embedded-opentype"),
+  font-family: "CustomFont";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../media/fonts/customfont/CustomFont.eot");
+  src:
+    url("../media/fonts/custom-font/CustomFont.otf") format("opentype"),
+    url("../media/fonts/custom-font/CustomFont.eot?#iefix") format("embedded-opentype"),
+    url("../media/fonts/custom-font/CustomFont.woff2") format("woff2"),
+    url("../media/fonts/custom-font/CustomFont.woff") format("woff"),
+    url("../media/fonts/custom-font/CustomFont.ttf") format("truetype");
 } */
 
 /* ==========================================================================

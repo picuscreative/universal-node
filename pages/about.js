@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import App from './components/App';
 import Head from './components/Head';
-import Svg from './components/Svg/Svg';
+import Svg from './components/Svg';
 import logo from './shared/media/images/picus-logo.jpeg';
 import thumbsUp from './shared/media/images/icons/thumbs-up.svg';
 

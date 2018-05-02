@@ -28,6 +28,7 @@ PICUS' template for universal Node/React applications. It offers you the require
     - [start](#start)
     - [test](#test)
     - [lint](#lint)
+    - [docs](#docs)
 - [Environment variables](#environment-variables)
 - [Browserl.ist](#browserlist)
 
@@ -94,6 +95,15 @@ $ npm run lint
 Runs [ESlint](https://eslint.org/) and [Stylelint](https://stylelint.io/) on the project.
 
 We use conventional commit messages: [commitlint/config-conventional](https://github.com/marionebl/commitlint/tree/master/%40commitlint/config-conventional).
+
+### docs
+
+```sh
+$ npm run docs
+```
+
+Runs [react-docgen](https://github.com/reactjs/react-docgen) to generate Markdown documentation for each component available in `pages/components`. By default it generates a `doc.md` inside the component directory.
+
 
 ## Environment variables
 

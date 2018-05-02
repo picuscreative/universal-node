@@ -3,8 +3,8 @@
 
 From [`CustomHead`](CustomHead)
 
-Custom Head
-Dynamically set <head> attributes for SEO
+Custom Head -
+Dynamically set "<head>" attributes for SEO
 
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------

@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 /**
- * Svg
- * Inline svg content inside <i>
+ * Svg -
+ * Inline svg content inside "<i>"
  */
 class Svg extends PureComponent {
   render() {
@@ -23,7 +23,7 @@ Svg.propTypes = {
    */
   svg: PropTypes.string.isRequired,
   /**
-   * Class name for <i>
+   * Class name for "<i>"
    */
   className: PropTypes.string,
 };

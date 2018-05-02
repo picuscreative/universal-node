@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 
 /**
- * Custom Head
- * Dynamically set <head> attributes for SEO
+ * Custom Head -
+ * Dynamically set "<head>" attributes for SEO
  */
 class CustomHead extends PureComponent {
   render() {

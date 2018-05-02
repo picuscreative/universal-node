@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 require('dotenv').config();
 const webpack = require('webpack');
-
 const withCSS = require('@zeit/next-css');
 
 module.exports = withCSS({

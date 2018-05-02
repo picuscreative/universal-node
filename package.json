@@ -23,7 +23,8 @@
     "lint": "eslint --fix . && stylelint --fix \"**/*.css\"",
     "precommit": "lint-staged",
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "analyze": "cross-env ANALYZE=1 next build"
+    "analyze": "cross-env ANALYZE=1 next build",
+    "docs": "node ./pages/utils/docs.js"
   },
   "lint-staged": {
     "*.js": [
@@ -53,6 +54,8 @@
     "next": "^5.1.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
+    "react-docgen": "^2.20.1",
+    "react-docgen-markdown-renderer": "^1.0.2",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",

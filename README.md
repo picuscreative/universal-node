@@ -139,6 +139,12 @@ REACT_APP_FOO=bar
 
 This file is ignored in source control and it is intended to be created from `.env.sample`, which is committed and anyone who clones the project can easily use it as a starting point.
 
+
 ## Browserl.ist
 
 By default, configurations for ESlint, Stylelint, PostCSS are "> 3%, Chrome >= 58, Firefox >= 58, Edge >= 16, Explorer >= 10, iOS >= 9.0" based on [browserl.ist](http://browserl.ist/?q=%3E+3%25%2C+Chrome+%3E%3D+58%2C+Firefox+%3E%3D+58%2C+Edge+%3E%3D+16%2C+Explorer+%3E%3D+10%2C+iOS+%3E%3D+9.0).
+
+
+## LICENSE
+
+[MIT License](https://opensource.org/licenses/MIT) - [PICUS](https://picuscreative.com)

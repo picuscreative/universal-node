@@ -4,17 +4,21 @@ import Document, { Head, Main, NextScript } from 'next/document';
 class MainDocument extends Document {
   render() {
     return (
-      <html>
+      <html lang="en">
         <Head>
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1" />
-          <meta name="HandheldFriendly" content="True" />
-          <meta name="MobileOptimized" content="320" />
-          <meta name="apple-mobile-web-app-title" content="project-name" />
-          <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta name="apple-touch-fullscreen" content="yes" />
-          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-          <meta name="application-name" content="project-name" />
+          <meta key="viewport" name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1" />
+          <meta key="HandheldFriendly" name="HandheldFriendly" content="True" />
+          <meta key="MobileOptimized" name="MobileOptimized" content="320" />
+          <meta key="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="project-name" />
+          <meta key="apple-mobile-web-app-capable" name="apple-mobile-web-app-capable" content="yes" />
+          <meta key="apple-touch-fullscreen" name="apple-touch-fullscreen" content="yes" />
+          <meta key="apple-mobile-web-app-status-bar-style" name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+          <meta key="application-name" name="application-name" content="project-name" />
+          <meta key="msapplication-TileColor" name="msapplication-TileColor" content="#ffffff" />
+          <meta key="msapplication-TileImage" name="msapplication-TileImage" content="/dist/static/images/mstile-150x150.png" />
+          <meta key="msapplication-config" name="msapplication-config" content="/dist/static/images/browserconfig.xml" />
+          <meta key="theme-color" name="theme-color" content="#ffffff" />
           <link rel="apple-touch-icon" sizes="180x180" href="/dist/static/images/apple-touch-icon.png" />
           <link rel="icon" type="image/png" href="/dist/static/images/android-chrome-192x192.png" sizes="192x192" />
           <link rel="icon" type="image/png" href="/dist/static/images/android-chrome-512x512.png" sizes="512x512" />
@@ -23,10 +27,7 @@ class MainDocument extends Document {
           <link rel="shortcut icon" href="/dist/static/images/favicon.ico" />
           <link rel="manifest" href="/dist/static/images/manifest.json" />
           <link rel="mask-icon" href="/dist/static/images/safari-pinned-tab.svg" color="#ffffff" />
-          <meta name="msapplication-TileColor" content="#ffffff" />
-          <meta name="msapplication-TileImage" content="/dist/static/images/mstile-150x150.png" />
-          <meta name="msapplication-config" content="/dist/static/images/browserconfig.xml" />
-          <meta name="theme-color" content="#ffffff" />
+          <meta key="description" name="description" content="project-name default description" />
           <style>
             {'/* INPUT CRITICAL CSS */'}
           </style>

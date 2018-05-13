@@ -9,12 +9,12 @@ import Head from 'next/head';
 class CustomHead extends PureComponent {
   render() {
     const { title, description } = this.props;
-
     return (
       <div>
         <Head>
           <title>{title}</title>
-          <meta name="description" content={description} />
+          { description ? (<meta key="description" name="description" content={description} />) : null }
+          {/* any other meta tags */}
         </Head>
       </div>
     );
@@ -25,11 +25,11 @@ CustomHead.propTypes = {
   /**
    * Title meta tag content
    */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /**
    * Description meta tag content
    */
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
 };
 
 export default CustomHead;

@@ -10,13 +10,20 @@ PICUS' template for universal Node/React applications. It offers you the require
 
 ## What’s Included?
 
-- [React](https://reactjs.org/)
-- [Redux](https://redux.js.org/)
-- [Next.js](https://nextjs.org/)
-- [PostCSS](http://postcss.org/) with [cssnext](http://cssnext.io/) plugin
-- [Express](https://expressjs.com/)
-- [Node](https://nodejs.org)
-- [TestCafé](http://devexpress.github.io/testcafe/)
+- 👀 `react` as the view.
+- 🎛 Preconfigured with `redux`.
+- 🚄 `express` server.
+- 🛢️ `sequelize` ORM for data persistence.
+- ☕ `testcafe` as the E2E test framework.
+- 👌 Airbnb's ESlint configuration and Standard Stylelint - performing code formatting on commit. Stop worrying about code style consistency.
+- 📝 `browserslist` to share target browsers between different front-end tools.
+- 🌍 Server Side Rendering with `next.js`.
+- 🖌 `postcss` and `cssnext` support.
+- 🔧 Centralised application configuration with helpers to avoid boilerplate in your code. Also has support for environment variables.
+- ⛑ SEO friendly - provides control of title/meta from within your pages.
+- 📊 Google Analytics support.
+- 👮 Security on the `express` server using `helmet` and `hpp`.
+- 🏜 Asset bundling support. e.g. images/svgs/fonts.
 
 
 ## Table of Contents
@@ -30,7 +37,7 @@ PICUS' template for universal Node/React applications. It offers you the require
     - [lint](#lint)
     - [docs](#docs)
 - [Environment variables](#environment-variables)
-- [Browserl.ist](#browserlist)
+- [Browserslist](#browserslist)
 
 
 ## Installation and setup
@@ -140,7 +147,7 @@ REACT_APP_FOO=bar
 This file is ignored in source control and it is intended to be created from `.env.sample`, which is committed and anyone who clones the project can easily use it as a starting point.
 
 
-## Browserl.ist
+## Browserslist
 
 By default, configurations for ESlint, Stylelint, PostCSS are "> 3%, Chrome >= 58, Firefox >= 58, Edge >= 16, Explorer >= 10, iOS >= 9.0" based on [browserl.ist](http://browserl.ist/?q=%3E+3%25%2C+Chrome+%3E%3D+58%2C+Firefox+%3E%3D+58%2C+Edge+%3E%3D+16%2C+Explorer+%3E%3D+10%2C+iOS+%3E%3D+9.0).
 

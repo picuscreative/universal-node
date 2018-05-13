@@ -32,11 +32,6 @@ body {
   overflow-wrap: break-word; /* Break long words by default */
 }
 
-::selection {
-  background: color(var(--color-amaranth) lightness(25%));
-  color: var(--color-white);
-}
-
 strong {
   font-weight: 500;
 }

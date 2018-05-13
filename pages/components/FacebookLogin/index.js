@@ -16,10 +16,8 @@ class FacebookLogin extends Component {
   }
 
   componentDidMount() {
-    if (process.browser) {
-      document.addEventListener('FBObjectReady', this.sdkLoaded);
-      this.loadFBSdk();
-    }
+    document.addEventListener('FBObjectReady', this.sdkLoaded);
+    this.loadFBSdk();
   }
 
   componentWillUnmount() {
@@ -55,24 +53,22 @@ class FacebookLogin extends Component {
   }
 
   onClick() {
-    if (process.browser) {
-      if (!this.state.isSdkLoaded && !window.FB) return;
-      const {
-        fields, callback, onFailure, scope,
-      } = this.props;
+    if (!this.state.isSdkLoaded && !window.FB) return;
+    const {
+      fields, callback, onFailure, scope,
+    } = this.props;
 
-      window.FB.login((response) => {
-        if (response.authResponse) {
-          window.FB.api(`/me?fields=${fields}`, (user) => {
-            callback({ status: response.status, user });
-          });
-        } else if (onFailure) {
-          onFailure({ status: response.status });
-        } else {
-          callback({ status: response.status });
-        }
-      }, { scope });
-    }
+    window.FB.login((response) => {
+      if (response.authResponse) {
+        window.FB.api(`/me?fields=${fields}`, (user) => {
+          callback({ status: response.status, user });
+        });
+      } else if (onFailure) {
+        onFailure({ status: response.status });
+      } else {
+        callback({ status: response.status });
+      }
+    }, { scope });
   }
 
   render() {

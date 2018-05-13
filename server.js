@@ -1,8 +1,11 @@
 const express = require('express');
 const expressValidator = require('express-validator');
+const helmet = require('helmet');
+const hpp = require('hpp');
+const bodyParser = require('body-parser');
 const next = require('next');
 const controllers = require('./server/controllers')(express);
-require('./config/config');
+const config = require('./config/config');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -11,6 +14,10 @@ const handle = app.getRequestHandler();
 app.prepare()
   .then(() => {
     const server = express();
+    server.use(bodyParser.urlencoded({ extended: false }));
+    server.use(hpp());
+    server.use(helmet());
+    server.use(helmet.contentSecurityPolicy(config.app.csp));
     server.use(expressValidator());
     server.use(express.static('public'));
 

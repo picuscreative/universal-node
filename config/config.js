@@ -15,6 +15,19 @@ const defaultConfig = {
   app: {
     site_url: process.env.SITE_URL,
     api_url: process.env.REACT_APP_API_URL,
+    csp: {
+      directives: {
+        'connect-src': ["'self'"],
+        'default-src': ["'none'"],
+        'script-src': ["'self'", "'unsafe-inline'", 'https://www.google-analytics.com/analytics.js'],
+        'style-src': ["'self'", "'unsafe-inline'"],
+        'img-src': ["'self'", 'https://www.google-analytics.com'],
+        'font-src': ["'self'", 'fonts.gstatic.com'],
+        'object-src': ["'none'"],
+        'block-all-mixed-content': true,
+        'frame-ancestors': ["'none'"],
+      },
+    },
   },
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,

@@ -13,8 +13,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test sequelize --seeders-path=./server/seeders db:seed:all && cross-env NODE_ENV=test testcafe chrome:headless tests/ --screenshots=./tests/screenshots/desktop",
-    "test:mobile": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test sequelize --seeders-path=./server/seeders db:seed:all && cross-env NODE_ENV=test testcafe \"chrome:headless:emulation:device=iphone 6\" tests/ --screenshots=./tests/screenshots/mobile",
+    "test": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test sequelize --seeders-path=./server/seeders db:seed:all && cross-env NODE_ENV=test testcafe chrome:headless --screenshots=./tests/screenshots/desktop --screenshots-on-fails",
+    "test:mobile": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test sequelize --seeders-path=./server/seeders db:seed:all && cross-env NODE_ENV=test testcafe \"chrome:headless:emulation:device=iphone 6\" --screenshots=./tests/screenshots/mobile --screenshots-on-fails",
     "db:migrate": "sequelize --migrations-path=./server/migrations db:migrate",
     "db:migrate:seeds": "sequelize --migrations-path=./server/migrations db:migrate && sequelize --seeders-path=./server/seeders db:seed:all",
     "dev": "cross-env NODE_ENV=development node server.js",
@@ -58,6 +58,7 @@
     "react-docgen-markdown-renderer": "^1.0.2",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
+    "react-stripe-elements": "^1.6.0",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",

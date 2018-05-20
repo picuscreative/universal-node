@@ -1,4 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-param-reassign */
+
 require('dotenv').config();
 const webpack = require('webpack');
 const withCSS = require('@zeit/next-css');
@@ -22,6 +24,15 @@ module.exports = withCSS({
         });
       config.plugins.push(new webpack.EnvironmentPlugin(envVariables));
     }
+
+    const originalEntry = config.entry;
+    config.entry = async () => {
+      const entries = await originalEntry();
+      if (entries['main.js']) {
+        entries['main.js'].unshift('./client/polyfills.js');
+      }
+      return entries;
+    };
 
     config.module.rules.push(
       // Raster images (png, jpg, etc)

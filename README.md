@@ -22,6 +22,7 @@ PICUS' template for universal Node/React applications. It offers you the require
 - 🔧 Centralised application configuration with helpers to avoid boilerplate in your code. Also has support for environment variables.
 - ⛑ SEO friendly - provides control of title/meta from within your pages.
 - 📊 Google Analytics support.
+- 🐞 Error tracking with Sentry.
 - 👮 Security on the `express` server using `helmet` and `hpp`.
 - 🏜 Asset bundling support. e.g. images/svgs/fonts.
 

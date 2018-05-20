@@ -19,7 +19,7 @@ const defaultConfig = {
       directives: {
         'connect-src': ["'self'"],
         'default-src': ["'none'"],
-        'script-src': ["'self'", "'unsafe-inline'", 'https://www.google-analytics.com/analytics.js'],
+        'script-src': ["'self'", "'unsafe-inline'", 'https://www.google-analytics.com/analytics.js', 'https://cdn.ravenjs.com/3.25.2/raven.min.js'],
         'style-src': ["'self'", "'unsafe-inline'"],
         'img-src': ["'self'", 'https://www.google-analytics.com'],
         'font-src': ["'self'", 'fonts.gstatic.com'],

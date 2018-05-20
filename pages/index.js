@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import App from './components/App';
-import CustomHead from './components/CustomHead';
-import withRedux from './utils/withRedux';
-import initStore from './utils/store';
-import userActions from './actions/user';
+import App from '../client/components/App';
+import CustomHead from '../client/components/CustomHead';
+import withRedux from '../client/utils/withRedux';
+import initStore from '../client/utils/store';
+import userActions from '../client/actions/user';
 
 class Index extends PureComponent {
   static async getInitialProps() {

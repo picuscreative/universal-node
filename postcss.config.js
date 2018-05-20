@@ -1,10 +1,10 @@
 module.exports = {
   plugins: {
     'postcss-import': {
-      path: 'pages/shared',
+      path: 'client/shared',
     },
     'postcss-mixins': {
-      mixinsDir: 'pages/shared/mixins',
+      mixinsDir: 'client/shared/mixins',
     },
     'postcss-for': {},
     'postcss-css-variables': {},

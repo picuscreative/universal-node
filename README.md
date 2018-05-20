@@ -109,7 +109,7 @@ We use conventional commit messages: [commitlint/config-conventional](https://gi
 $ npm run docs
 ```
 
-Runs [react-docgen](https://github.com/reactjs/react-docgen) to generate Markdown documentation for each component available in `pages/components`. By default it generates a `doc.md` inside the component directory.
+Runs [react-docgen](https://github.com/reactjs/react-docgen) to generate Markdown documentation for each component available in `components`. By default it generates a `doc.md` inside the component directory.
 
 
 ## Environment variables

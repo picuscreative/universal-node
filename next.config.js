@@ -27,7 +27,7 @@ module.exports = withCSS({
       // Raster images (png, jpg, etc)
       {
         test: /\.(png|jpg|jpeg|gif|webp)$/,
-        exclude: [/\.svg$/, 'pages/shared/media/fonts'],
+        exclude: [/\.svg$/, 'client/shared/media/fonts'],
         use: [
           {
             loader: require.resolve('file-loader'),

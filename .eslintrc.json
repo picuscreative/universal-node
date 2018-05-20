@@ -23,7 +23,6 @@
   },
   "rules": {
     "compat/compat": "error",
-    "import/no-dynamic-require": 0,
     "class-methods-use-this": [2, {
       "exceptMethods": [
         "render"

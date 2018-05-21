@@ -95,7 +95,7 @@
     "svg-css-modules-loader": "^1.6.1",
     "svgo": "^1.0.5",
     "svgo-loader": "^2.1.0",
-    "testcafe": "^0.19.2",
+    "testcafe": "^0.20.0",
     "webpack-bundle-analyzer": "^2.8.3"
   },
   "browserslist": [

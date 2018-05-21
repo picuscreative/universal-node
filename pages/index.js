@@ -10,16 +10,12 @@ import userActions from '../client/actions/user';
 class Index extends PureComponent {
   static async getInitialProps() {
     return {
+      id: 1,
       meta: {
         title: 'project-name',
         description: 'This is an example of a meta description for project-name page.',
       },
     };
-  }
-
-  componentDidMount() {
-    const userId = 1;
-    this.props.loadUser(userId);
   }
 
   render() {
@@ -49,8 +45,8 @@ Index.propTypes = {
 
 const mapStateToProps = ({ user }) => ({ user });
 
-const mapDispatchToProps = dispatch => ({
-  loadUser: id => dispatch(userActions.loadUser(id)),
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  loadUser: dispatch(userActions.loadUser(ownProps.id)),
 });
 
 export default withRedux(initStore, mapStateToProps, mapDispatchToProps)(Index);

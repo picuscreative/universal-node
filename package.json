@@ -24,7 +24,7 @@
     "precommit": "lint-staged",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "analyze": "cross-env ANALYZE=1 next build",
-    "docs": "node ./utils/docs-gen.js"
+    "docs": "node ./client/utils/docs-gen.js"
   },
   "lint-staged": {
     "*.js": [

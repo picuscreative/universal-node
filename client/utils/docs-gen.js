@@ -3,7 +3,7 @@ const path = require('path');
 const reactDocgen = require('react-docgen');
 const ReactDocGenMarkdownRenderer = require('react-docgen-markdown-renderer');
 
-const componentsBasePath = path.join(__dirname, '../client/components');
+const componentsBasePath = path.join(__dirname, '../components');
 const renderer = new ReactDocGenMarkdownRenderer({
   componentsBasePath,
 });

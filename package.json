@@ -104,6 +104,7 @@
     "Firefox >= 58",
     "Edge >= 16",
     "Explorer >= 10",
+    "Safari >= 11",
     "iOS >= 9.0"
   ],
   "engines": {

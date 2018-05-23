@@ -119,6 +119,7 @@ Your project can consume variables declared in your environment by accessing the
 
 The following variables will be made available:
 
+- `SITE_URL`: The URL where the site will be running, e.g., `http://localhost:3000`
 - `DB_USER`: The user name used for database connection.
 - `DB_PASSWORD`: The user's password used for database connection.
 - `DB_HOST`: The database connection, the value can be a IP address or a domain.
@@ -150,7 +151,7 @@ This file is ignored in source control and it is intended to be created from `.e
 
 ## Browserslist
 
-By default, configurations for ESlint, Stylelint, PostCSS are "> 3%, Chrome >= 58, Firefox >= 58, Edge >= 16, Explorer >= 10, iOS >= 9.0" based on [browserl.ist](http://browserl.ist/?q=%3E+3%25%2C+Chrome+%3E%3D+58%2C+Firefox+%3E%3D+58%2C+Edge+%3E%3D+16%2C+Explorer+%3E%3D+10%2C+iOS+%3E%3D+9.0).
+By default, configurations for ESlint, Stylelint, PostCSS are "> 3%, Chrome >= 58, Firefox >= 58, Edge >= 16, Explorer >= 10, Safari >= 11, iOS >= 9.0" based on [browserl.ist](http://browserl.ist/?q=%3E+3%25%2C+Chrome+%3E%3D+58%2C+Firefox+%3E%3D+58%2C+Edge+%3E%3D+16%2C+Explorer+%3E%3D+10%2C+Safari+%3E%3D+11%2C+iOS+%3E%3D+9.0).
 
 
 ## LICENSE

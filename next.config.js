@@ -1,7 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-param-reassign */
-
 require('dotenv').config();
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+const { ANALYZE } = process.env;
 const webpack = require('webpack');
 const withCSS = require('@zeit/next-css');
 
@@ -89,6 +91,14 @@ module.exports = withCSS({
         ],
       },
     );
+
+    if (ANALYZE) {
+      config.plugins.push(new BundleAnalyzerPlugin({
+        analyzerMode: 'server',
+        analyzerPort: isServer ? 8888 : 8889,
+        openAnalyzer: true,
+      }));
+    }
 
     return config;
   },

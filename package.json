@@ -24,7 +24,6 @@
     "precommit": "lint-staged",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "analyze": "cross-env ANALYZE=1 next build",
-    "perf": "cross-env NODE_ENV=development npm run dev && lighthouse http://localhost:3000/ --output html --outputh-path ./public/perf.html",
     "docs": "node ./client/utils/docs-gen.js"
   },
   "lint-staged": {
@@ -79,7 +78,6 @@
     "eslint-plugin-react": "^7.7.0",
     "file-loader": "^1.1.11",
     "husky": "^0.14.3",
-    "lighthouse": "^2.9.4",
     "lint-staged": "^7.0.4",
     "postcss": "^6.0.21",
     "postcss-conditionals": "^2.1.0",

@@ -7,32 +7,27 @@ import { CardElement, injectStripe } from 'react-stripe-elements';
  * Card Payment with Card Number, Date, CVC, Zip code
  */
 class StripeAllInOneCardForm extends Component {
-  constructor(props) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  static propTypes = {
+    /**
+     * Stripe object - window.Stripe('publishable_key')
+     * See: https://dashboard.stripe.com/account/apikeys
+     */
+    stripe: PropTypes.object.isRequired,
+  };
 
-  handleSubmit(ev) {
+  handleSubmit = (ev) => {
     ev.preventDefault();
     this.props.stripe.createToken().then(payload => console.log(payload));
-  }
+  };
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <CardElement/>
+        <CardElement />
         <button>Pay</button>
       </form>
     );
   }
 }
-
-StripeAllInOneCardForm.propTypes = {
-  /**
-   * Stripe object - window.Stripe('publishable_key')
-   * See: https://dashboard.stripe.com/account/apikeys
-   */
-  stripe: PropTypes.object.isRequired,
-};
 
 export default injectStripe(StripeAllInOneCardForm);

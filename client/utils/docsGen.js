@@ -14,9 +14,13 @@ dirs(componentsBasePath).forEach((component) => {
   const componentPath = `${componentsBasePath}/${component}`;
   fs.readFile(`${componentPath}/index.js`, (readErr, content) => {
     if (readErr) throw readErr;
-    fs.writeFile(`${componentPath}/doc${renderer.extension}`, renderer.render(componentPath, reactDocgen.parse(content), []), (writeErr) => {
-      if (writeErr) throw writeErr;
-      console.log(`${component} doc generated...`);
-    });
+    fs.writeFile(
+      `${componentPath}/doc${renderer.extension}`,
+      renderer.render(componentPath, reactDocgen.parse(content), []),
+      (writeErr) => {
+        if (writeErr) throw writeErr;
+        console.log(`${component} doc generated...`);
+      },
+    );
   });
 });

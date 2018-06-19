@@ -1,9 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-param-reassign */
 require('dotenv').config();
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-
-const { ANALYZE } = process.env;
 const webpack = require('webpack');
 const withCSS = require('@zeit/next-css');
 
@@ -26,15 +22,6 @@ module.exports = withCSS({
         });
       config.plugins.push(new webpack.EnvironmentPlugin(envVariables));
     }
-
-    const originalEntry = config.entry;
-    config.entry = async () => {
-      const entries = await originalEntry();
-      if (entries['main.js']) {
-        entries['main.js'].unshift('./client/polyfills.js');
-      }
-      return entries;
-    };
 
     config.module.rules.push(
       // Raster images (png, jpg, etc)
@@ -60,11 +47,7 @@ module.exports = withCSS({
           {
             loader: require.resolve('svgo-loader'),
             options: {
-              plugins: [
-                { removeTitle: true },
-                { removeDimensions: true },
-                { cleanupIDs: false },
-              ],
+              plugins: [{ removeTitle: true }, { removeDimensions: true }, { cleanupIDs: false }],
             },
           },
           // Uniquify classnames and ids so they don't conflict with eachother
@@ -91,14 +74,6 @@ module.exports = withCSS({
         ],
       },
     );
-
-    if (ANALYZE) {
-      config.plugins.push(new BundleAnalyzerPlugin({
-        analyzerMode: 'server',
-        analyzerPort: isServer ? 8888 : 8889,
-        openAnalyzer: true,
-      }));
-    }
 
     return config;
   },

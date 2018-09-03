@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import App from '~/components/App';
 import CustomHead from '~/components/CustomHead';
 import Input from '~/components/Input';
+import Button from '~/components/Button';
 import Checkbox from '~/components/Checkbox';
 import styles from '~/shared/styles/pages/form.css';
 
@@ -28,6 +29,7 @@ class FormAndInputs extends PureComponent {
     this.state = {
       name: null,
       selected: false,
+      background: false,
     };
   }
 
@@ -40,8 +42,8 @@ class FormAndInputs extends PureComponent {
   };
 
   handleBoolean = (event) => {
-    const { name } = event.target;
-
+    const { name } = event.target.currentTarget ? event.target.currentTarget : event.target;
+    console.log('theb', name);
     this.setState(prevState => ({
       [name]: !prevState[name],
     }));
@@ -49,7 +51,7 @@ class FormAndInputs extends PureComponent {
 
   render() {
     const { meta } = this.props;
-    const { name, selected } = this.state;
+    const { name, selected, background } = this.state;
     return (
       <App>
         <CustomHead title={meta.title} description={meta.description} />
@@ -73,6 +75,13 @@ class FormAndInputs extends PureComponent {
               checked={selected}
               onChange={this.handleBoolean}
             />
+          </div>
+          <div>
+            <h3>Button</h3>
+            <div className={background && styles.background}>
+              {background ? 'Back to how it was!' : 'Change background to red!'}
+            </div>
+            <Button name="background" action={this.handleBoolean} text="Change background" />
           </div>
         </div>
       </App>

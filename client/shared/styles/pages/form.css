@@ -1,3 +1,10 @@
+@import "styles/variables";
+
 .wrapper div {
   padding: 20px 0;
+}
+
+.background {
+  max-width: 150px;
+  background-color: var(--color-amaranth);
 }

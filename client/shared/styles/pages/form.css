@@ -12,3 +12,11 @@
 .valid {
   color: var(--color-forest-green);
 }
+
+.blueBg {
+  color: var(--color-aqua);
+}
+
+.redBg {
+  color: var(--color-amaranth);
+}

@@ -6,6 +6,7 @@ import Input from '~/components/Input';
 import Button from '~/components/Button';
 import Checkbox from '~/components/Checkbox';
 import FormContainer from '~/components/FormContainer';
+import Radio from '~/components/Radio';
 import fieldsForm from '~/config/form';
 import validateForm from '~/config/form/validator';
 import { formValidator } from '~/utils/forms';
@@ -36,6 +37,7 @@ class FormAndInputs extends PureComponent {
       background: false,
       errorsForm: {},
       validForm: false,
+      radioOption: 'blue',
     };
   }
 
@@ -66,7 +68,6 @@ class FormAndInputs extends PureComponent {
     );
 
     if (isValid) {
-      console.log('kkd');
       this.setState({
         validForm: true,
         errorsForm: {},
@@ -78,10 +79,43 @@ class FormAndInputs extends PureComponent {
     }
   };
 
+  onRadioChange = (property, value) => {
+    this.setState({
+      [property]: value,
+    });
+  };
+
+  renderRadioButtons = () => {
+    const { radioOption } = this.state;
+
+    const fields = [
+      {
+        placeholder: 'Paint this blue',
+        name: 'blue',
+        value: 'blue',
+      },
+      {
+        placeholder: "I'd rather have it red",
+        name: 'red',
+        value: 'red',
+      },
+    ];
+
+    return (
+      <Radio
+        className={styles.radio}
+        items={fields}
+        property="radioOption"
+        value={radioOption}
+        handleChange={this.onRadioChange}
+      />
+    );
+  };
+
   render() {
     const { meta } = this.props;
     const {
-      name, selected, background, errorsForm, validForm,
+      name, selected, background, errorsForm, validForm, radioOption,
     } = this.state;
     return (
       <App>
@@ -108,7 +142,7 @@ class FormAndInputs extends PureComponent {
           </div>
           <div>
             <h3>Button</h3>
-            <div className={background && styles.background}>
+            <div className={background ? styles.background : ''}>
               {background ? 'Back to how it was!' : 'Change background to red!'}
             </div>
             <Button name="background" action={this.handleBoolean} text="Change background" />
@@ -125,6 +159,12 @@ class FormAndInputs extends PureComponent {
               errors={errorsForm}
             />
             {validForm && <div className={styles.valid}>The email has been validated!</div>}
+          </div>
+          <div>
+            <h3>Radio</h3>
+            <div className={radioOption === 'blue' ? styles.blueBg : styles.redBg}>
+              {this.renderRadioButtons()}
+            </div>
           </div>
         </div>
       </App>

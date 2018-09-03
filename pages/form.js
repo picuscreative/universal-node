@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import App from '~/components/App';
+import CustomHead from '~/components/CustomHead';
 import Input from '~/components/Input';
-import App from '../client/components/App';
-import CustomHead from '../client/components/CustomHead';
+import Checkbox from '~/components/Checkbox';
+import styles from '~/shared/styles/pages/form.css';
 
 class FormAndInputs extends PureComponent {
   static async getInitialProps() {
@@ -25,6 +27,7 @@ class FormAndInputs extends PureComponent {
     super(props);
     this.state = {
       name: null,
+      selected: false,
     };
   }
 
@@ -36,16 +39,42 @@ class FormAndInputs extends PureComponent {
     });
   };
 
+  handleBoolean = (event) => {
+    const { name } = event.target;
+
+    this.setState(prevState => ({
+      [name]: !prevState[name],
+    }));
+  };
+
   render() {
     const { meta } = this.props;
-    const { name } = this.state;
+    const { name, selected } = this.state;
     return (
       <App>
         <CustomHead title={meta.title} description={meta.description} />
         <h1>Form & Input Examples</h1>
         <p>Demonstration usage of the form elements:</p>
-        <Input name="name" handleChange={this.handleChange} />
-        <label>{name ? `Hey, now I'm named ${name}` : 'I have no name :('}</label>
+        <div className={styles.wrapper}>
+          <div>
+            <h3>Input</h3>
+            <Input name="name" handleChange={this.handleChange} />
+            <label>{name ? `Hey, now I'm named ${name}` : 'I have no name :('}</label>
+          </div>
+          <div>
+            <h3>Checkbox</h3>
+
+            <label>Am I selected?</label>
+            <br />
+            <Checkbox
+              placeholder={selected ? 'Yes, I am' : "No, I'm not"}
+              name="selected"
+              value={selected}
+              checked={selected}
+              onChange={this.handleBoolean}
+            />
+          </div>
+        </div>
       </App>
     );
   }

@@ -7,3 +7,12 @@
 header {
   background-color: var(--color-amaranth);
 }
+
+.url {
+  padding-right: 50px;
+  color: var(--color-black);
+}
+
+.url:hover {
+  color: var(--color-black);
+}

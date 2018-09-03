@@ -5,6 +5,10 @@ import CustomHead from '~/components/CustomHead';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 import Checkbox from '~/components/Checkbox';
+import FormContainer from '~/components/FormContainer';
+import fieldsForm from '~/config/form';
+import validateForm from '~/config/form/validator';
+import { formValidator } from '~/utils/forms';
 import styles from '~/shared/styles/pages/form.css';
 
 class FormAndInputs extends PureComponent {
@@ -30,6 +34,8 @@ class FormAndInputs extends PureComponent {
       name: null,
       selected: false,
       background: false,
+      errorsForm: {},
+      validForm: false,
     };
   }
 
@@ -43,15 +49,40 @@ class FormAndInputs extends PureComponent {
 
   handleBoolean = (event) => {
     const { name } = event.target.currentTarget ? event.target.currentTarget : event.target;
-    console.log('theb', name);
+
     this.setState(prevState => ({
       [name]: !prevState[name],
     }));
   };
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { email } = event.target.elements;
+    const { isValid, errors } = formValidator(
+      {
+        email,
+      },
+      validateForm,
+    );
+
+    if (isValid) {
+      console.log('kkd');
+      this.setState({
+        validForm: true,
+        errorsForm: {},
+      });
+    } else {
+      this.setState({
+        errorsForm: errors,
+      });
+    }
+  };
+
   render() {
     const { meta } = this.props;
-    const { name, selected, background } = this.state;
+    const {
+      name, selected, background, errorsForm, validForm,
+    } = this.state;
     return (
       <App>
         <CustomHead title={meta.title} description={meta.description} />
@@ -65,7 +96,6 @@ class FormAndInputs extends PureComponent {
           </div>
           <div>
             <h3>Checkbox</h3>
-
             <label>Am I selected?</label>
             <br />
             <Checkbox
@@ -82,6 +112,19 @@ class FormAndInputs extends PureComponent {
               {background ? 'Back to how it was!' : 'Change background to red!'}
             </div>
             <Button name="background" action={this.handleBoolean} text="Change background" />
+          </div>
+          <div>
+            <h3>Form</h3>
+            <FormContainer
+              id="forgot-password-form"
+              className={styles.form}
+              submitLabel="Validate Email"
+              fields={fieldsForm}
+              handleSubmit={this.handleSubmit}
+              handleErrors={validateForm}
+              errors={errorsForm}
+            />
+            {validForm && <div className={styles.valid}>The email has been validated!</div>}
           </div>
         </div>
       </App>

@@ -23,7 +23,7 @@ class Button extends Component {
     /**
      * Name to be given to identify the button element
      */
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
     /**
      * The type of button that needs to be rendered,
      * that by default is assumed to be "button"

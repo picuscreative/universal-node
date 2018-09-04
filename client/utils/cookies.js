@@ -1,24 +1,16 @@
 import cookie from 'js-cookie';
-import isNull from 'lodash/isNull';
+import { isEmpty, isNull } from 'lodash';
 import isUndefined from 'lodash/isUndefined';
 
 /**
  /* Session with cookies for client and server-side
 */
 
-export const setCookie = (key, value) => {
+export const setCookie = (key, value, expires = 1) => {
   if (process.browser) {
     cookie.set(key, value, {
-      expires: 0.1,
+      ...(expires && { expires }),
       path: '/',
-    });
-  }
-};
-
-export const removeCookie = (key) => {
-  if (process.browser) {
-    cookie.remove(key, {
-      expires: 0.1,
     });
   }
 };
@@ -36,9 +28,28 @@ const getCookieFromServer = (key, req) => {
   return rawCookie.split('=')[1];
 };
 
+const removeCookiesFromBrowser = (keys) => {
+  keys.forEach((key) => {
+    cookie.remove(key);
+  });
+};
+
+const removeCookiesFromServer = (keys, res = {}) => {
+  if (!isEmpty(res)) {
+    keys.forEach(key => res.clearCookie(key));
+  }
+};
+
 export const getCookie = (key, req = {}) => {
   if (isNull(req) || isUndefined(req)) {
     return process.browser && getCookieFromBrowser(key);
   }
   return process.browser ? getCookieFromBrowser(key) : getCookieFromServer(key, req);
+};
+
+export const removeCookies = (keys, res = {}) => {
+  if (isNull(res) || isUndefined(res)) {
+    return process.browser && removeCookiesFromBrowser();
+  }
+  return process.browser ? removeCookiesFromBrowser(keys) : removeCookiesFromServer(keys, res);
 };

@@ -50,7 +50,7 @@ export default function (data, previousData) {
     case 'repeatPassword':
       if (value !== previousData.newPassword.value) {
         error.message = errorList.passwordsNotEqualValue;
-      } else if (!Validator.isEmpty(value) && !Validator.isLength(value, { min: 8 })) {
+      } else if (!Validator.isEmpty(value) && !Validator.isLength(value, { min: 10 })) {
         error.message = errorList.passwordsMinCharacters;
       }
       break;

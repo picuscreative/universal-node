@@ -5,10 +5,12 @@ export const apiRoutes = {
   AUTH_USER_API: `${apiUrl}/auth/token`,
   GET_USER_API: userId => `${apiUrl}/users/${userId}`,
   UPDATE_USER_API: userId => `${apiUrl}/users/${userId}`,
-  RESET_USER_PASSWORD_API: `${apiUrl}/request_password_reset`,
+  RESET_USER_PASSWORD_API: `${apiUrl}/reset`,
   DELETE_USER_API: userId => `${apiUrl}/users/${userId}`,
 };
 
 export const pageRoutes = {
   HOME_PATH: '/',
+  LOGIN_PATH: '/login',
+  ACCOUNT_DETAILS_PATH: '/account',
 };

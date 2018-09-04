@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import App from '../client/components/App';
 import CustomHead from '../client/components/CustomHead';
-import withRedux from '../client/utils/withRedux';
-import initStore from '../client/utils/store';
 import userActions from '../client/actions/user';
 
 class Index extends PureComponent {
@@ -57,4 +56,4 @@ const mapDispatchToProps = dispatch => ({
   login: (email, password) => dispatch(userActions.login({ email, password })),
 });
 
-export default withRedux(initStore, mapStateToProps, mapDispatchToProps)(Index);
+export default connect(mapStateToProps, mapDispatchToProps)(Index);

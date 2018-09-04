@@ -18,35 +18,43 @@ class Index extends PureComponent {
     };
   }
 
+  static propTypes = {
+    /**
+     * Current information of the user, if logged in
+     */
+    user: PropTypes.object,
+    /**
+     * Function that logins the user based on the email and password sent
+     */
+    loginUser: PropTypes.func,
+    /**
+     * Meta attributes, e.g. title, description etc.
+     */
+    meta: PropTypes.object.isRequired,
+  };
+
   render() {
     const { meta, user } = this.props;
     return (
       <App>
-        <CustomHead
-          title={ meta.title }
-          description={ meta.description }
-        />
+        <CustomHead title={meta.title} description={meta.description} />
         <h1>project-name</h1>
-        <p>Hello { user.email }</p>
-        <p>Visit <Link href="/about"><a>PICUS</a></Link></p>
+        <p>Hello {user.email}</p>
+        <p>
+          Visit
+          <Link href="/about">
+            <a>PICUS</a>
+          </Link>
+        </p>
       </App>
     );
   }
 }
 
-Index.propTypes = {
-  user: PropTypes.object,
-  loadUser: PropTypes.func,
-  /**
-   * Meta attributes, e.g. title, description etc.
-   */
-  meta: PropTypes.object.isRequired,
-};
-
 const mapStateToProps = ({ user }) => ({ user });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  loadUser: dispatch(userActions.loadUser(ownProps.id)),
+const mapDispatchToProps = dispatch => ({
+  login: (email, password) => dispatch(userActions.login({ email, password })),
 });
 
 export default withRedux(initStore, mapStateToProps, mapDispatchToProps)(Index);

@@ -1,0 +1,13 @@
+@import "styles/variables";
+
+.navigation {
+  display: flex;
+}
+
+.active {
+  color: $primary-white;
+}
+
+.inactive {
+  color: $primary-gray;
+}

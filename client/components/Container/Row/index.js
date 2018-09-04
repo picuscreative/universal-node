@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import styles from '~/shared/styles/grid.scss';
 
-const Row = ({ children }) => <div className={styles.row}>{children}</div>;
+const Row = ({ children, className }) => (
+  <div className={classNames(styles.row, className)}>{children}</div>
+);
 
 Row.propTypes = {
-  children: PropTypes.object,
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
 export default Row;

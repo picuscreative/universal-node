@@ -1,11 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import styles from '~/shared/styles/grid.scss';
 
-const Container = ({ children }) => <div className={styles.container}>{children}</div>;
+const Container = ({ className, fluid, children }) => (
+  <div className={classNames(className, fluid ? styles['container-fluid'] : styles.container)}>
+    {children}
+  </div>
+);
 
 Container.propTypes = {
-  children: PropTypes.object,
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  fluid: PropTypes.bool,
 };
 
 export default Container;

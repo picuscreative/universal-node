@@ -1,10 +1,7 @@
 import React, { PureComponent } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import App from '../client/components/App';
-import CustomHead from '../client/components/CustomHead';
-import userActions from '../client/actions/user';
+import Page from '../client/components/Page';
 
 class Index extends PureComponent {
   static async getInitialProps() {
@@ -33,27 +30,20 @@ class Index extends PureComponent {
   };
 
   render() {
-    const { meta, user } = this.props;
+    const { user } = this.props;
     return (
-      <App>
-        <CustomHead title={meta.title} description={meta.description} />
+      <Page {...this.props}>
         <h1>project-name</h1>
-        <p>Hello {user.email}</p>
+        <p>Hello {user}</p>
         <p>
           Visit
           <Link href="/about">
             <a>PICUS</a>
           </Link>
         </p>
-      </App>
+      </Page>
     );
   }
 }
 
-const mapStateToProps = ({ user }) => ({ user });
-
-const mapDispatchToProps = dispatch => ({
-  login: (email, password) => dispatch(userActions.login({ email, password })),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Index);
+export default Index;

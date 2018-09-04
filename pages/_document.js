@@ -36,12 +36,6 @@ class MainDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {process.env.REACT_APP_SENTRY_DSN ? (
-            <script src="https://cdn.ravenjs.com/3.25.2/raven.min.js" crossOrigin="anonymous" dangerouslySetInnerHTML={{
-__html: `Raven.config('${process.env.REACT_APP_SENTRY_DSN}').install();`,
-}}>
-            </script>
-          ) : null }
           {process.env.REACT_APP_GA ? (
             <script dangerouslySetInnerHTML={{
  __html: `(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import App from '~/components/App';
-import CustomHead from '~/components/CustomHead';
+import App from '~/components/Page';
 import Svg from '~/components/Svg';
 import logo from '~/shared/media/images/picus-logo.jpg';
 import thumbsUp from '~/shared/media/images/icons/thumbs-up.svg';
@@ -17,11 +16,16 @@ class About extends PureComponent {
     };
   }
 
+  static propTypes = {
+    /**
+     * Meta attributes, e.g. title, description etc.
+     */
+    meta: PropTypes.object.isRequired,
+  };
+
   render() {
-    const { meta } = this.props;
     return (
-      <App>
-        <CustomHead title={meta.title} description={meta.description} />
+      <App {...this.props}>
         <h1>PICUS Creative</h1>
         <p>BRINGING AMAZING DIGITAL PRODUCTS TO LIFE.</p>
         <Svg className={styles.icon} svg={thumbsUp} />
@@ -32,12 +36,5 @@ class About extends PureComponent {
     );
   }
 }
-
-About.propTypes = {
-  /**
-   * Meta attributes, e.g. title, description etc.
-   */
-  meta: PropTypes.object.isRequired,
-};
 
 export default About;

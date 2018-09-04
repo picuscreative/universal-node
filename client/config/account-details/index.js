@@ -1,5 +1,5 @@
 export const fields = {
-  real_name: {
+  name: {
     type: 'text',
     value: '',
     placeholder: 'Name',
@@ -67,7 +67,7 @@ export const groups = [
       {
         id: 'name',
         title: 'Name',
-        fields: ['real_name'],
+        fields: ['name'],
       },
       {
         id: 'updateEmail',

@@ -52,7 +52,7 @@ class AccountDetails extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const {
-      real_name,
+      name,
       email,
       newEmail,
       repeatEmail,
@@ -65,7 +65,7 @@ class AccountDetails extends Component {
 
     const { isValid, errors } = formValidator(
       {
-        real_name,
+        name,
         email,
         newEmail,
         repeatEmail,
@@ -82,7 +82,7 @@ class AccountDetails extends Component {
       });
       this.props
         .update({
-          real_name: real_name.value,
+          name: name.value,
           ...(!isEmpty(newEmail.value) && { email: newEmail.value }),
           ...(!isEmpty(newPassword.value) && { password: newPassword.value }),
           subscribed_email: subscribed_email.value === 'true',

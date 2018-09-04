@@ -7,7 +7,7 @@ export default function (data, previousData) {
   const error = {};
 
   switch (name) {
-    case 'real_name':
+    case 'name':
       if (!value || Validator.isEmpty(value)) {
         error.message = errorList.realNameEmptyValue;
       }

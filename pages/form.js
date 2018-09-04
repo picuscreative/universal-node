@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import App from '~/components/App';
-import CustomHead from '~/components/CustomHead';
+import App from '~/components/Page';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 import Checkbox from '~/components/Checkbox';
@@ -113,13 +112,11 @@ class FormAndInputs extends PureComponent {
   };
 
   render() {
-    const { meta } = this.props;
     const {
       name, selected, background, errorsForm, validForm, radioOption,
     } = this.state;
     return (
-      <App>
-        <CustomHead title={meta.title} description={meta.description} />
+      <App {...this.props}>
         <h1>Form & Input Examples</h1>
         <p>Demonstration usage of the form elements:</p>
         <div className={styles.wrapper}>

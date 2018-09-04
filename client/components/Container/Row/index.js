@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '~/shared/styles/bootstrap-grid.css';
+import styles from '~/shared/styles/grid.scss';
 
 const Row = ({ children }) => <div className={styles.row}>{children}</div>;
 

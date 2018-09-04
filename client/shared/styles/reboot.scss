@@ -1,5 +1,4 @@
 /* stylelint-disable */
-
 /*!
 * Bootstrap Reboot v4.0.0-beta.2 (https://getbootstrap.com)
 * Copyright 2011-2017 The Bootstrap Authors
@@ -8,8 +7,8 @@
 * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
 */
 *,
-*::before,
-*::after {
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -21,12 +20,21 @@ html {
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
 }
-
 @-ms-viewport {
   width: device-width;
 }
 
-article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
   display: block;
 }
 
@@ -51,7 +59,12 @@ hr {
   overflow: visible;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -61,8 +74,8 @@ p {
   margin-bottom: 1rem;
 }
 
-abbr[title],
-abbr[data-original-title] {
+abbr[data-original-title],
+abbr[title] {
   border-bottom: 0;
   -webkit-text-decoration: underline dotted;
   text-decoration: underline;
@@ -76,17 +89,17 @@ address {
   line-height: inherit;
 }
 
+dl,
 ol,
-ul,
-dl {
+ul {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
 ol ol,
-ul ul,
 ol ul,
-ul ol {
+ul ol,
+ul ul {
   margin-bottom: 0;
 }
 
@@ -149,7 +162,8 @@ a:not([href]):not([tabindex]) {
   text-decoration: none;
 }
 
-a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
   color: inherit;
   text-decoration: none;
 }
@@ -158,9 +172,9 @@ a:not([href]):not([tabindex]):focus {
   outline: 0;
 }
 
-pre,
 code,
 kbd,
+pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
@@ -186,15 +200,15 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-a,
-area,
-button,
 [role="button"],
 input:not([type="range"]),
 label,
 select,
 summary,
-textarea {
+textarea,
+a,
+area,
+button {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
@@ -229,10 +243,10 @@ button:focus {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-input,
 button,
-select,
+input,
 optgroup,
+select,
 textarea {
   margin: 0;
   font-family: inherit;
@@ -257,10 +271,10 @@ html [type="button"],
   -webkit-appearance: button;
 }
 
-button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
   padding: 0;
   border-style: none;
 }

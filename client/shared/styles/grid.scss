@@ -1,0 +1,258 @@
+@import "variables";
+
+/* ==========================================================================
+  Grid mixins for media queries
+========================================================================== */
+
+$browser-width-xs: 320px;
+$browser-width-sm: 480px;
+$browser-width-md: 720px;
+$browser-width-lg: 1280px;
+
+$grid-breakpoints: (
+  "xs": $browser-width-xs,
+  "sm": $browser-width-sm,
+  "md": $browser-width-md,
+  "lg": $browser-width-lg
+);
+
+@function breakpoint($breakpoint, $limit: "min") {
+  @if $limit == "max" {
+    @return map-get($grid-breakpoints, $breakpoint) - 1px;
+  }
+
+  @else {
+    @return map-get($grid-breakpoints, $breakpoint);
+  }
+}
+
+@mixin media($breakpoint, $limit: "min") {
+  @if $breakpoint == "xs" {
+    @media only screen and (max-width: breakpoint("sm", "max")) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "sm" {
+    @media only screen and (#{$limit}-width: breakpoint("sm", $limit)) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "md" {
+    @media only screen and (#{$limit}-width: breakpoint("md", $limit)) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "lg" {
+    @media only screen and (#{$limit}-width: breakpoint("lg", $limit)) {
+      @content;
+    }
+  }
+
+  @else {
+    @media only screen and (#{$limit}-width: #{$breakpoint}) {
+      @content;
+    }
+  }
+}
+
+@mixin media-between($min-breakpoint: "xs", $max-breakpoint: "lg") {
+  $min-width: breakpoint("xs");
+  $max-width: breakpoint("lg");
+
+  @if $min-breakpoint == "xs" {
+    $min-width: breakpoint("xs");
+  }
+
+  @else if $min-breakpoint == "sm" {
+    $min-width: breakpoint("sm");
+  }
+
+  @else if $min-breakpoint == "md" {
+    $min-width: breakpoint("md");
+  }
+
+  @else if $min-breakpoint == "lg" {
+    $min-width: breakpoint("lg");
+  }
+
+  @else if {
+    $min-width: $min-breakpoint;
+  }
+
+  @if $max-breakpoint == "sm" {
+    $max-width: breakpoint("sm", "max");
+  }
+
+  @if $max-breakpoint == "md" {
+    $max-width: breakpoint("md", "max");
+  }
+
+  @else if $max-breakpoint == "lg" {
+    $max-width: breakpoint("lg", "max");
+  }
+
+  @else if {
+    $max-width: $max-breakpoint;
+  }
+
+  @media (max-width: $max-width) and (min-width: $min-width) {
+    @content;
+  }
+}
+
+%clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+section {
+  max-width: 100%;
+  margin: 120px auto;
+}
+
+.container {
+  max-width: 100%;
+
+  @include media("xs") {
+    margin: 0 25px;
+  }
+
+  @include media("sm") {
+    max-width: $browser-width-sm;
+    margin: 0 auto;
+  }
+
+  @include media("md") {
+    max-width: $browser-width-md;
+  }
+
+  @include media("lg") {
+    max-width: $browser-width-lg;
+  }
+
+  &-fluid {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.row {
+  @extend %clearfix;
+
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+
+  & + & {
+    margin-top: $grid-spacing;
+  }
+
+  &:nth-child(1) {
+    padding-left: 0 !important;
+  }
+}
+
+/*
+ * Generates classes for a grid of columns, prefixed by size.
+ *
+ * @param {string} $size The name of the size target (e.g. xs, sm, md, lg)
+ * @param {int} $grid-columns Amount of columns
+ */
+@mixin grid-generator($size, $grid-columns) {
+  @for $i from 1 through $grid-columns {
+    .col-#{$size}-#{$i} {
+      $margin: (100 / ($grid-columns / $i)) * 1%;
+
+      width: $margin;
+      max-width: $margin;
+      flex: 0 0 $margin;
+
+      @if $size == "xs" {
+        @media only screen and (max-width: breakpoint("sm", "max")) {
+          padding: 0;
+        }
+      }
+
+      @else if $size == "sm" {
+        @media only screen and (min-width: $browser-width-sm) {
+          padding: 0 $grid-gutter-sm;
+        }
+      }
+
+      @else if $size == "md" {
+        @media only screen and (min-width: $browser-width-md) {
+          padding: 0 $grid-gutter-md;
+        }
+      }
+
+      @else if $size == "lg" {
+        @media only screen and (min-width: $browser-width-lg) {
+          padding: 0 $grid-gutter-lg;
+        }
+      }
+    }
+
+    .col-#{$size}-offset-0 {
+      margin-left: 0;
+    }
+
+    .col-#{$size}-offset-#{$i} {
+      margin-left: (100 / ($grid-columns / $i)) * 1%;
+    }
+  }
+}
+
+/*
+ * A mixin targeting a specific device width and larger.
+ * These are the available targets: 'xs', 'sm', 'md', 'lg'
+ *
+ * @param {string} $media The target media
+ */
+@mixin respond-from($media) {
+  @if $media == "xs" {
+    @media (min-width: 0) {
+      @content;
+    }
+  }
+
+  @else if $media == "sm" {
+    @media (min-width: $browser-width-sm) {
+      @content;
+    }
+  }
+
+  @else if $media == "md" {
+    @media (min-width: $browser-width-md) {
+      @content;
+    }
+  }
+
+  @else if $media == "lg" {
+    @media (min-width: $browser-width-lg) {
+      @content;
+    }
+  }
+}
+
+@include grid-generator("xs", 12);
+
+@include respond-from("sm") {
+  @include grid-generator("sm", 8);
+}
+
+@include respond-from("md") {
+  @include grid-generator("md", 12);
+}
+
+@include respond-from("lg") {
+  @include grid-generator("lg", 12);
+}

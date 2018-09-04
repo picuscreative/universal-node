@@ -7,7 +7,7 @@ import Container from '~/components/Container';
 import Column from '~/components/Container/Column';
 import Row from '~/components/Container/Row';
 import Checkbox from '~/components/Checkbox';
-import styles from './styles.css';
+import styles from './styles.scss';
 
 class Form extends PureComponent {
   constructor(props) {

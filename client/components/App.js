@@ -1,18 +1,19 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Header from './Header';
 /* eslint-disable no-unused-vars */
-import shared from '../shared/styles/index.css';
+import reboot from '~/shared/styles/reboot.scss';
+import globals from '~/shared/styles/globals.scss';
 /* eslint-enable no-unused-vars */
+import Header from './Header';
 
 class App extends PureComponent {
   render() {
     const { className, children } = this.props;
 
     return (
-      <div className={ className }>
+      <div className={className}>
         <Header />
-        { children }
+        {children}
       </div>
     );
   }

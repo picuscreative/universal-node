@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Link from 'next/link';
-import styles from './styles.css';
+import styles from './styles.scss';
 
 /**
  * Header

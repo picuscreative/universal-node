@@ -10,7 +10,7 @@ import Radio from '~/components/Radio';
 import fieldsForm from '~/config/form';
 import validateForm from '~/config/form/validator';
 import { formValidator } from '~/utils/forms';
-import styles from '~/shared/styles/pages/form.css';
+import styles from '~/shared/styles/pages/form.scss';
 
 class FormAndInputs extends PureComponent {
   static async getInitialProps() {

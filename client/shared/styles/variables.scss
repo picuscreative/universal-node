@@ -1,0 +1,110 @@
+/* stylelint-disable no-duplicate-selectors */
+
+/* ==========================================================================
+  Grid Gutters
+========================================================================== */
+
+$grid-gutter-sm: 10px !default;
+$grid-gutter-md: 18px !default;
+$grid-gutter-lg: 20px !default;
+$grid-spacing: 20px;
+
+/* ==========================================================================
+  Colors
+========================================================================== */
+
+$primary-black: #000;
+$primary-white: #fff;
+$primary-gray: gray;
+$secondary-gray: #a9a9a9;
+// $section-gray: #4a4a4a;
+$primary-red: #e52629;
+// $primary-bright-red: #ea0026;
+// $primary-yellow: #f3e406;
+
+/* ==========================================================================
+  Animations
+========================================================================== */
+
+$default-timing: 0.2s;
+
+/* ==========================================================================
+  Typography
+========================================================================== */
+
+$browser-context: 16px;
+$small-text: 14px;
+$large-text: 18px;
+
+$h1-font-size-xs: 26px;
+$h1-font-size-sm: 30px;
+$h1-font-size-md: 34px;
+$h1-font-size: 38px;
+
+$h2-font-size-xs: 22px;
+$h2-font-size-sm: 20px;
+$h2-font-size-md: 24px;
+$h2-font-size: 24px;
+
+$h3-font-size-xs: 18px;
+$h3-font-size-sm: 18px;
+$h3-font-size-md: 18px;
+$h3-font-size: 18px;
+
+$s1-font-size-xs: 16px;
+$s1-font-size-sm: 20px;
+$s1-font-size-md: 24px;
+$s1-font-size: 28px;
+
+/* ==========================================================================
+  Layout vars
+========================================================================== */
+
+$micro: 8px;
+$tiny: 16px;
+$small: 24px;
+$medium: 40px;
+$large: 64px;
+$xl: 104px;
+$xxl: 168px;
+$xl3: 264px;
+$xl4: 424px;
+$xl5: 680px;
+$xl6: 1088px;
+
+$button-width-xs: 140px;
+$button-height-xs: 60px;
+$button-width-sm: 140px;
+$button-height-sm: 60px;
+$button-width-md: 160px;
+$button-height-md: 50px;
+$button-width-lg: 160px;
+$button-height-lg: 50px;
+
+$input-height: 36px;
+
+$card-width-xs: 300px;
+$card-width-md: 205px;
+$card-height-md: 340px;
+$card-width-small-md: 160px;
+$card-height-small-md: 196px;
+$card-width-medium-md: 205px;
+$card-height-medium-md: 186px;
+$card-width-large-md: 240px;
+$card-height-large-md: 430px;
+
+$popup-width-xs: 338px;
+$popup-height-xs: 450px;
+$popup-width-md: 560px;
+$popup-height-md: 550px;
+
+$popup-large-width-lg: 1020px;
+$popup-large-height-lg: 640px;
+
+$body-padding-bottom-xs: $medium;
+$body-padding-bottom-md: $large;
+
+$header-height-xs: $xl;
+$header-height-sm: 120px;
+$header-height-md: $xxl;
+$header-height-lg: 192px;

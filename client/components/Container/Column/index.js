@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from '~/shared/styles/bootstrap-grid.css';
+import styles from '~/shared/styles/grid.scss';
 
 class Column extends PureComponent {
   static propTypes = {

@@ -1,18 +1,31 @@
 @import "styles/variables";
+@import "styles/grid";
 
 /* ==========================================================================
   Header
 ========================================================================== */
 
 header {
+  padding-bottom: $medium;
   background-color: $primary-red;
-}
 
-.url {
-  padding-right: 50px;
-  color: var(--color-black);
-}
+  .logo {
+    text-align: center;
 
-.url:hover {
-  color: var(--color-black);
+    > a img {
+      width: $large;
+
+      @include media("md") {
+        width: $xl;
+      }
+    }
+  }
+
+  .url {
+    text-align: center;
+
+    a {
+      padding: 0 $medium;
+    }
+  }
 }

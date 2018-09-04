@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import App from '~/components/App';
 import CustomHead from '~/components/CustomHead';
 import Svg from '~/components/Svg';
-import logo from '~/shared/media/images/picus-logo.jpeg';
+import logo from '~/shared/media/images/picus-logo.jpg';
 import thumbsUp from '~/shared/media/images/icons/thumbs-up.svg';
 import styles from '~/shared/styles/pages/about.scss';
 

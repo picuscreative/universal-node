@@ -25,7 +25,7 @@ class Header extends PureComponent {
       <header className={styles.header}>
         <Container fluid>
           <Row>
-            <Column xs="8" xsOffset="2" sm="4" smOffset="2" md="8" mdOffset="2" lg="8" lgOffset="2">
+            <Column xs="8" xsOffset="2" sm="8" smOffset="2" md="8" mdOffset="2" lg="8" lgOffset="2">
               <div className={classNames(styles.logo)}>
                 <Link href={pageRoutes.HOME_PATH}>
                   <a href={pageRoutes.HOME_PATH}>
@@ -36,14 +36,13 @@ class Header extends PureComponent {
             </Column>
           </Row>
           <Row>
-            <Column className={styles.url} xs="12" sm="8" md="12" lg="12">
+            <Column className={styles.url} xs="12" sm="12" md="12" lg="12">
               <Link href="/">
                 <a>Home</a>
               </Link>
               <Link href="/form">
                 <a>Forms & Inputs</a>
               </Link>
-
               <Link href="/about">
                 <a>About</a>
               </Link>

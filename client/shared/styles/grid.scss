@@ -246,7 +246,7 @@ section {
 @include grid-generator("xs", 12);
 
 @include respond-from("sm") {
-  @include grid-generator("sm", 8);
+  @include grid-generator("sm", 12);
 }
 
 @include respond-from("md") {

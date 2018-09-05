@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { CardElement, injectStripe } from 'react-stripe-elements';
 
 /**
- * Stripe All In One Form:
+ * Stripe All In One Form Custom:
  * Card Payment with Card Number, Date, CVC
  */
-class StripeAllInOneCardForm extends Component {
+class StripeAllInOneCardFormCustom extends Component {
   constructor(props) {
     super(props);
+    this.elements = props.stripe.elements();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -34,7 +34,32 @@ class StripeAllInOneCardForm extends Component {
      * Promise that should be executed with token information
      */
     postValidation: PropTypes.func,
+    /**
+     * Custom styling
+     * see: https://stripe.com/elements
+     */
+    style: PropTypes.object,
   };
+
+  componentDidMount() {
+    this.card = this.elements.create('cardNumber', {
+      placeholder: 'Card Number',
+      ...(this.props.style && { style: this.props.style }),
+    });
+    this.card.mount('#card_number');
+
+    const exp = this.elements.create('cardExpiry', {
+      placeholder: 'MM/YY',
+      ...(this.props.style && { style: this.props.style }),
+    });
+    exp.mount('#card_expiry_date');
+
+    const cvc = this.elements.create('cardCvc', {
+      placeholder: 'CVC',
+      ...(this.props.style && { style: this.props.style }),
+    });
+    cvc.mount('#card_cvc');
+  }
 
   async handleSubmit(e) {
     e.preventDefault();
@@ -42,7 +67,7 @@ class StripeAllInOneCardForm extends Component {
 
     const isValid = await preValidation();
     if (isValid) {
-      const res = await stripe.createToken();
+      const res = await stripe.createToken(this.card);
       await postValidation(res.token);
     }
   }
@@ -50,11 +75,10 @@ class StripeAllInOneCardForm extends Component {
   render() {
     return (
       <form className={this.props.className} onSubmit={this.handleSubmit}>
-        <CardElement hidePostalCode={true} />
         {this.props.children}
       </form>
     );
   }
 }
 
-export default injectStripe(StripeAllInOneCardForm);
+export default StripeAllInOneCardFormCustom;

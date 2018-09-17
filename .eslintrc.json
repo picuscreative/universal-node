@@ -15,7 +15,7 @@
     }
   },
   "settings": {
-    "polyfills": ["fetch"],
+    "polyfills": ["fetch", "promises"],
     "import/resolver": {
       "babel-plugin-root-import": {
         "rootPathPrefix": "~",

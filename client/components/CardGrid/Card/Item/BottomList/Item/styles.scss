@@ -1,0 +1,21 @@
+@import "styles/variables";
+@import "styles/grid";
+
+.bottom-list-item {
+  padding-bottom: $micro;
+  display: flex;
+  justify-content: space-between;
+  font-size: $small-text;
+
+  @include media("md", "max") {
+    justify-content: center;
+  }
+
+  > div:last-of-type {
+    font-weight: 600;
+
+    @include media("md", "max") {
+      margin-left: $micro;
+    }
+  }
+}

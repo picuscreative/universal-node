@@ -1,13 +1,13 @@
 {
   "extends": "stylelint-config-standard",
-  "plugins": ["stylelint-order", "stylelint-no-unsupported-browser-features"],
+  "plugins": ["stylelint-scss", "stylelint-order", "stylelint-no-unsupported-browser-features"],
   "rules": {
     "plugin/no-unsupported-browser-features": [
       true,
       {
         "browsers": [
           "> 3%",
-          "Chrome >= 58",
+          "Chrome >= 65",
           "Firefox >= 58",
           "Edge >= 16",
           "Explorer >= 10",
@@ -17,19 +17,23 @@
         "severity": "warning"
       }
     ],
-    "selector-pseudo-class-no-unknown": [
-      true,
-      {
-        "ignorePseudoClasses": ["global"]
-      }
-    ],
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": ["define-mixin"]
+        "ignoreAtRules": [
+          "function",
+          "for",
+          "if",
+          "else",
+          "each",
+          "include",
+          "mixin",
+          "return",
+          "content",
+          "extend"
+        ]
       }
     ],
-    "selector-type-no-unknown": null,
     "order/properties-order": [
       [
         "all",

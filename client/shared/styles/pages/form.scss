@@ -1,0 +1,22 @@
+@import "styles/variables";
+
+.wrapper > div {
+  padding: 20px 0;
+}
+
+.background {
+  max-width: 150px;
+  background-color: var(--color-amaranth);
+}
+
+.valid {
+  color: var(--color-forest-green);
+}
+
+.blueBg {
+  color: var(--color-aqua);
+}
+
+.redBg {
+  color: var(--color-amaranth);
+}

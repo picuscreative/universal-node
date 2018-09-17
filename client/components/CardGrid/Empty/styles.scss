@@ -1,0 +1,18 @@
+@import "styles/variables";
+@import "styles/mixins/position";
+
+.content {
+  @include alignCenter;
+
+  display: block;
+  flex-direction: column;
+
+  p {
+    margin-bottom: 0;
+    color: $primary-black;
+  }
+
+  button {
+    margin-top: $small;
+  }
+}

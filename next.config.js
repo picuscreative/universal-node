@@ -1,14 +1,21 @@
 /* eslint-disable import/no-extraneous-dependencies */
-require('dotenv').config();
-const webpack = require('webpack');
-const withCSS = require('@zeit/next-css');
+/* eslint-disable no-param-reassign */
 
-module.exports = withCSS({
+require('dotenv').config();
+const path = require('path');
+const webpack = require('webpack');
+const withSass = require('@zeit/next-sass');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+module.exports = withSass({
   distDir: 'public/dist',
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 1,
     localIdentName: '[local]___[hash:base64:5]',
+  },
+  sassLoaderOptions: {
+    includePaths: [path.resolve(__dirname, 'client/shared')],
   },
   webpack(config, options) {
     const { dev, isServer } = options;
@@ -30,7 +37,7 @@ module.exports = withCSS({
         exclude: [/\.svg$/, 'client/shared/media/fonts'],
         use: [
           {
-            loader: require.resolve('file-loader'),
+            loader: 'file-loader',
             options: {
               publicPath: '/dist/static/images',
               outputPath: 'static/images',
@@ -42,20 +49,14 @@ module.exports = withCSS({
       // SVGs
       {
         test: /\.svg$/,
-        use: [
-          require.resolve('raw-loader'),
+        oneOf: [
           {
-            loader: require.resolve('svgo-loader'),
-            options: {
-              plugins: [{ removeTitle: true }, { removeDimensions: true }, { cleanupIDs: false }],
-            },
+            include: path.resolve(__dirname, 'client/shared/media/images/backgrounds'),
+            use: 'url-loader',
           },
-          // Uniquify classnames and ids so they don't conflict with eachother
           {
-            loader: require.resolve('svg-css-modules-loader'),
-            options: {
-              transformId: true,
-            },
+            exclude: path.resolve(__dirname, 'client/shared/media/images/backgrounds'),
+            use: 'svg-inline-loader',
           },
         ],
       },
@@ -64,7 +65,7 @@ module.exports = withCSS({
         test: /\.(eot|ttf|woff|woff2|otf)$/,
         use: [
           {
-            loader: require.resolve('file-loader'),
+            loader: 'file-loader',
             options: {
               publicPath: '/dist/static/fonts',
               outputPath: 'static/fonts',
@@ -73,7 +74,15 @@ module.exports = withCSS({
           },
         ],
       },
+      {
+        test: /\.scss$/,
+        use: ['postcss-loader'],
+      },
     );
+
+    if (process.env.ANALYZE && !isServer) {
+      config.plugins.push(new BundleAnalyzerPlugin({ analyzerPort: 3002 }));
+    }
 
     return config;
   },

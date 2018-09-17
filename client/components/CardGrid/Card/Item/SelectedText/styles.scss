@@ -1,0 +1,11 @@
+@import "styles/variables";
+
+.selectedText {
+  width: 144px;
+  padding-bottom: 4px;
+  display: inline-block;
+  border-bottom: 1px solid $primary-white;
+  color: $primary-white;
+  font-size: $small-text;
+  text-transform: capitalize;
+}

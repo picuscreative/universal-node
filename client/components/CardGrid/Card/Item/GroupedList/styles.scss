@@ -1,0 +1,12 @@
+@import "styles/variables";
+
+.list-wrapper {
+  margin-top: $micro;
+  color: $primary-gray;
+  font-size: $tiny;
+
+  .title {
+    color: $primary-white;
+    font-size: $small-text;
+  }
+}

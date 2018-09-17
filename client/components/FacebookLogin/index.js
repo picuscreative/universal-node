@@ -18,9 +18,9 @@ class FacebookLogin extends Component {
     /**
      * Children elements
      */
-    children: PropTypes.node.isRequired,
+    children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     /**
-     * Facebook fields: https://developers.facebook.com/docs/graph-api/reference/v3.0/user
+     * Facebook fields: https://developers.facebook.com/docs/graph-api/reference/v3.1/user
      */
     fields: PropTypes.string,
     /**
@@ -42,11 +42,11 @@ class FacebookLogin extends Component {
   };
 
   static defaultProps = {
-    fields: 'name',
+    fields: 'name,email',
     language: 'en_US',
     onFailure: null,
     scope: 'public_profile,email',
-    version: 'v3.0',
+    version: 'v3.1',
   };
 
   constructor(props) {
@@ -121,7 +121,7 @@ class FacebookLogin extends Component {
 
   render() {
     const { children } = this.props;
-    return <div onClick={this.onClick}>{children}</div>;
+    return <div>{children}</div>;
   }
 }
 

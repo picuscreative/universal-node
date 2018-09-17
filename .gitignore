@@ -1,4 +1,5 @@
 .next
+coverage
 public/dist
 tests/screenshots/**/*.png
 node_modules

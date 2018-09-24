@@ -8,6 +8,7 @@ import Auth from '~/services/auth';
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     ctx.userId = Auth.getUserId(ctx);
+
     const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
 
     Object.assign(pageProps, {
@@ -26,7 +27,6 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps, store } = this.props;
-
     return (
       <Container fluid>
         <Provider store={store}>

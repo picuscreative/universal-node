@@ -12,11 +12,13 @@ module.exports.create = (req, res) => {
         errors: validationErrors.array(),
       });
     } else if (req.body.photo) {
-      User.create(req.body).then(() => {
-        responseHandler.validateCreate(res, resourceName, true);
-      }).catch((err) => {
-        responseHandler.validateCreate(res, resourceName, err);
-      });
+      User.create(req.body)
+        .then(() => {
+          responseHandler.validateCreate(res, resourceName, true);
+        })
+        .catch((err) => {
+          responseHandler.validateCreate(res, resourceName, err);
+        });
     }
   });
 };
@@ -29,9 +31,7 @@ module.exports.read = (req, res) => {
         errors: validationErrors.array(),
       });
     } else {
-      const {
-        user_id,
-      } = req.params;
+      const { user_id } = req.params;
       User.findById(user_id).then((results) => {
         responseHandler.validateRead(res, resourceName, results);
       });
@@ -47,20 +47,20 @@ module.exports.update = (req, res) => {
         error: validationErrors.array(),
       });
     } else {
-      const {
-        user_id,
-      } = req.params;
-      User.findById(user_id).then((userFound) => {
-        const user = userFound;
-        Object.keys(req.body).forEach((key, body) => {
-          user[key] = body[key];
+      const { user_id } = req.params;
+      User.findById(user_id)
+        .then((userFound) => {
+          const user = userFound;
+          Object.keys(req.body).forEach((key, body) => {
+            user[key] = body[key];
+          });
+          return user.save().then((results) => {
+            responseHandler.validateUpdate(res, resourceName, results);
+          });
+        })
+        .catch((err) => {
+          responseHandler.validateUpdate(res, resourceName, err);
         });
-        return user.save().then((results) => {
-          responseHandler.validateUpdate(res, resourceName, results);
-        });
-      }).catch((err) => {
-        responseHandler.validateUpdate(res, resourceName, err);
-      });
     }
   });
 };
@@ -73,18 +73,18 @@ module.exports.delete = (req, res) => {
         errors: validationErrors.array(),
       });
     } else {
-      const {
-        user_id,
-      } = req.params;
+      const { user_id } = req.params;
       User.destroy({
         where: {
           id: user_id,
         },
-      }).then(() => {
-        responseHandler.validateDelete(res, resourceName, true);
-      }).catch((err) => {
-        responseHandler.validateDelete(res, resourceName, err);
-      });
+      })
+        .then(() => {
+          responseHandler.validateDelete(res, resourceName, true);
+        })
+        .catch((err) => {
+          responseHandler.validateDelete(res, resourceName, err);
+        });
     }
   });
 };

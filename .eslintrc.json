@@ -21,10 +21,14 @@
         "rootPathPrefix": "~",
         "rootPathSuffix": "client"
       }
+    },
+    "react": {
+      "version": "16.0"
     }
   },
   "rules": {
     "compat/compat": "error",
+    "implicit-arrow-linebreak": 2,
     "class-methods-use-this": [
       2,
       {

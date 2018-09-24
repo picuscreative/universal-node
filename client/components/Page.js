@@ -3,7 +3,9 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Raven from 'raven-js';
+import { Offline, Online } from 'react-detect-offline';
 import Container from '~/components/Container';
+import Column from '~/components/Container/Column';
 /* eslint-disable no-unused-vars */
 import reboot from '~/shared/styles/reboot.scss';
 import globals from '~/shared/styles/globals.scss';
@@ -32,15 +34,12 @@ class Page extends PureComponent {
     user: PropTypes.object,
   };
 
-  constructor(props) {
-    super(props);
-
+  componentDidMount() {
     // load Sentry if it exists in env file (see README for configuration)
     if (process.env.REACT_APP_SENTRY_DSN) {
       Raven.config(process.env.REACT_APP_SENTRY_DSN).install();
-      if (this.props.userId && this.props.user) {
+      if (this.props.userId) {
         Raven.setUserContext({
-          email: this.props.user.email,
           id: this.props.userId,
         });
       }
@@ -56,8 +55,24 @@ class Page extends PureComponent {
       <Container>
         <div className={classNames(className)}>
           <CustomHead title={meta.title} description={meta.description} />
-          <Header isAuthenticated={isAuthenticated} />
-          {children}
+          <Container fluid>
+            <Header isAuthenticated={isAuthenticated} />
+          </Container>
+          <Online>{children}</Online>
+          <Offline
+            onChange={() => {
+              setTimeout(() => {
+                /* eslint-disable no-restricted-globals */
+                location.reload();
+                /* eslint-enable no-restricted-globals */
+              }, 5000);
+            }}
+          >
+            <Column alignCenter>
+              <div>You are offline at the moment.</div>
+              <div>Please turn on your connection and refresh the page.</div>
+            </Column>
+          </Offline>
         </div>
       </Container>
     );

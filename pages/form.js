@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import App from '~/components/Page';
 import Input from '~/components/Input';
@@ -11,7 +11,7 @@ import validateForm from '~/config/form/validator';
 import { formValidator } from '~/utils/forms';
 import styles from '~/shared/styles/pages/form.scss';
 
-class FormAndInputs extends PureComponent {
+class FormAndInputs extends Component {
   static async getInitialProps() {
     return {
       meta: {

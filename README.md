@@ -13,11 +13,10 @@ PICUS' template for universal Node/React applications. It offers you the require
 - 🎛 Preconfigured with `redux`.
 - 🚄 `express` server.
 - 🛢️ `sequelize` ORM for data persistence.
-- ☕ `testcafe` as the E2E test framework.
 - 👌 Airbnb's ESlint configuration and Standard Stylelint - performing code formatting on commit. Stop worrying about code style consistency.
 - 📝 `browserslist` to share target browsers between different front-end tools.
 - 🌍 Server Side Rendering with `next.js`.
-- 🖌 `postcss` and `cssnext` support.
+- 🖌 `postcss` support.
 - 🔧 Centralised application configuration with helpers to avoid boilerplate in your code. Also has support for environment variables.
 - ⛑ SEO friendly - provides control of title/meta from within your pages.
 - 📊 Google Analytics support.
@@ -32,7 +31,6 @@ PICUS' template for universal Node/React applications. It offers you the require
   - [dev](#dev)
   - [build](#build)
   - [start](#start)
-  - [test](#test)
   - [lint](#lint)
   - [docs](#docs)
 - [Environment variables](#environment-variables)
@@ -79,16 +77,6 @@ $ npm start
 ```
 
 Starts a production server. You must run `npm run build` before running this command.
-
-### test
-
-```sh
-$ npm test
-```
-
-Runs the project's User Acceptance Tests using [TestCafé](http://devexpress.github.io/testcafe/) for desktop environment. There is a version `npm run test:mobile` to be used for mobile environments, feel free to change the current emulation settings in `package.json`.
-
-**Note**: It's mandatory that a server process is already running via [npm run dev](#dev) or [npm start](#start) before executing the test suite.
 
 ### lint
 
@@ -145,7 +133,7 @@ This file is ignored in source control and it is intended to be created from `.e
 
 ## Browserslist
 
-By default, configurations for ESlint, Stylelint, PostCSS are "> 3%, Chrome >= 58, Firefox >= 58, Edge >= 16, Explorer >= 10, Safari >= 11, iOS >= 9.0" based on [browserl.ist](http://browserl.ist/?q=%3E+3%25%2C+Chrome+%3E%3D+58%2C+Firefox+%3E%3D+58%2C+Edge+%3E%3D+16%2C+Explorer+%3E%3D+10%2C+Safari+%3E%3D+11%2C+iOS+%3E%3D+9.0).
+By default, configurations for ESlint, Stylelint are "> 3%, Chrome >= 66, Firefox >= 58, Edge >= 16, Explorer >= 10, Safari >= 11, iOS >= 9.0" based on [browserl.ist](http://browserl.ist/?q=%3E+3%25%2C+Chrome+%3E%3D+66%2C+Firefox+%3E%3D+58%2C+Edge+%3E%3D+16%2C+Explorer+%3E%3D+10%2C+Safari+%3E%3D+11%2C+iOS+%3E%3D+9.2).
 
 ## LICENSE
 

@@ -7,12 +7,12 @@
       {
         "browsers": [
           "> 3%",
-          "Chrome >= 65",
+          "Chrome >= 66",
           "Firefox >= 58",
           "Edge >= 16",
           "Explorer >= 10",
           "Safari >= 11",
-          "iOS >= 9.0"
+          "iOS >= 9.2"
         ],
         "severity": "warning"
       }

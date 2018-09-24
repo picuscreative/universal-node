@@ -1,12 +1,19 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import Link from 'next/link';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import UserActions from '../client/actions/user';
 import Page from '../client/components/Page';
 
-class Index extends PureComponent {
-  static async getInitialProps() {
+class Index extends Component {
+  static async getInitialProps(ctx) {
+    const { store } = ctx;
+    const userId = 1;
+
+    const user = await store.dispatch(UserActions.get(userId, ctx));
+
     return {
-      id: 1,
+      user,
       meta: {
         title: 'project-name',
         description: 'This is an example of a meta description for project-name page.',
@@ -20,9 +27,9 @@ class Index extends PureComponent {
      */
     user: PropTypes.object,
     /**
-     * Function that logins the user based on the email and password sent
+     * Function that get user based on id
      */
-    loginUser: PropTypes.func,
+    getUser: PropTypes.func,
     /**
      * Meta attributes, e.g. title, description etc.
      */
@@ -34,11 +41,10 @@ class Index extends PureComponent {
     return (
       <Page {...this.props}>
         <h1>project-name</h1>
-        <p>Hello {user}</p>
+        <p>Hello {user.email}</p>
         <p>
-          Visit
           <Link href="/about">
-            <a>PICUS</a>
+            <a>Visit PICUS</a>
           </Link>
         </p>
       </Page>
@@ -46,4 +52,8 @@ class Index extends PureComponent {
   }
 }
 
-export default Index;
+const mapStateToProps = ({ user }) => ({
+  user,
+});
+
+export default connect(mapStateToProps)(Index);

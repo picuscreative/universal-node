@@ -9,6 +9,11 @@ $browser-width-sm: 480px;
 $browser-width-md: 720px;
 $browser-width-lg: 1280px;
 
+$browser-margin-xs: 20px;
+$browser-margin-sm: 60px;
+$browser-margin-md: 70px;
+$browser-margin-lg: 120px;
+
 $grid-breakpoints: (
   "xs": $browser-width-xs,
   "sm": $browser-width-sm,
@@ -118,7 +123,7 @@ section {
   max-width: 100%;
 
   @include media("xs") {
-    margin: 0 25px;
+    margin: 0 $browser-margin-xs;
   }
 
   @include media("sm") {
@@ -246,7 +251,7 @@ section {
 @include grid-generator("xs", 12);
 
 @include respond-from("sm") {
-  @include grid-generator("sm", 12);
+  @include grid-generator("sm", 8);
 }
 
 @include respond-from("md") {

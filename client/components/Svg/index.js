@@ -32,7 +32,7 @@ class Svg extends PureComponent {
     /**
      * On click action callback
      */
-    onClick: PropTypes.function,
+    onClick: PropTypes.func,
   };
 
   render() {
@@ -47,8 +47,8 @@ class Svg extends PureComponent {
           dangerouslySetInnerHTML={{
             __html: svgHover
               ? `<span class="${styles['svg-default']} ${className}">${svg}</span><span class="${
-                  styles['svg-hover']
-                } ${className}">${svgHover}</span>`
+                styles['svg-hover']
+              } ${className}">${svgHover}</span>`
               : svg,
           }}
         />

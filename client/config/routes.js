@@ -11,6 +11,6 @@ export const apiRoutes = {
 
 export const pageRoutes = {
   HOME_PATH: '/',
-  LOGIN_PATH: '/login',
-  ACCOUNT_DETAILS_PATH: '/account',
+  ABOUT_PATH: '/about',
+  FORM_PATH: '/form',
 };

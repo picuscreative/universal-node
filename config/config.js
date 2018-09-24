@@ -36,7 +36,6 @@ const defaultConfig = {
         'script-src': [
           "'self'",
           "'unsafe-inline'",
-          "'unsafe-eval'",
           'https://connect.facebook.net/en_US/sdk.js',
           'https://www.google-analytics.com/analytics.js',
           'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.0.0/polyfill.min.js',
@@ -66,6 +65,11 @@ const defaultConfig = {
     underscored: true,
   },
 };
+
+// HMR requires unsafe-eval in development mode
+if (process.env.NODE_ENV === 'development') {
+  defaultConfig.app.csp.directives['script-src'].push("'unsafe-eval'");
+}
 
 const config = {
   development: {

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render an empty input 1`] = `
+Array [
+  <input
+    className="input"
+    name="test"
+    type="text"
+  />,
+]
+`;

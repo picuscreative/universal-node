@@ -115,6 +115,7 @@
     "postcss-mixins": "^6.2.0",
     "raw-loader": "^0.5.1",
     "redux-mock-store": "^1.5.3",
+    "sinon": "^6.3.4",
     "stylelint": "^9.5.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-no-unsupported-browser-features": "^3.0.1",

@@ -64,7 +64,7 @@ a:visited,
 a:hover,
 a:active {
   outline: none !important;
-  color: $primary-white;
+  color: $primary-red;
   text-decoration: none !important;
   transition: color $default-timing;
 }
@@ -120,7 +120,7 @@ input:hover {
 @keyframes autofill {
   to {
     background: transparent;
-    color: #666;
+    color: gray;
   }
 }
 

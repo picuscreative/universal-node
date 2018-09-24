@@ -15,6 +15,7 @@ class UserApi {
       .then(res => res.json())
       .catch(error => error);
   }
+
   static login({ email, password }) {
     return fetch(
       apiRoutes.AUTH_USER_API,
@@ -30,32 +31,7 @@ class UserApi {
       .then(res => res.json())
       .catch(error => error);
   }
-  static loginFacebook({ fb_token, type }) {
-    const requestUrl = type === 'login' ? apiRoutes.AUTH_USER_API : apiRoutes.CREATE_USER_API;
-    const requestContent =
-      type === 'login'
-        ? {
-          method: 'GET',
-          authorization: {
-            type: 'facebook',
-            fb_token,
-          },
-        }
-        : {
-          method: 'POST',
-          authorization: {
-            type: 'facebook',
-            fb_token,
-          },
-          body: {
-            fb_token,
-          },
-        };
 
-    return fetch(requestUrl, request(requestContent))
-      .then(res => res.json())
-      .catch(error => error);
-  }
   static update(id, body) {
     return fetch(
       apiRoutes.UPDATE_USER_API(id),
@@ -70,6 +46,7 @@ class UserApi {
       .then(res => res.json())
       .catch(error => error);
   }
+
   static get(id, ctx = {}) {
     return fetch(
       apiRoutes.GET_USER_API(id),
@@ -84,6 +61,7 @@ class UserApi {
       .then(res => res.json())
       .catch(error => error);
   }
+
   static delete(id) {
     return fetch(
       apiRoutes.DELETE_USER_API(id),
@@ -97,26 +75,13 @@ class UserApi {
       .then(res => res)
       .catch(error => error);
   }
+
   static resetPassword(body) {
     return fetch(
       apiRoutes.RESET_USER_PASSWORD_API,
       request({
         method: 'POST',
         body,
-      }),
-    )
-      .then(res => res.json())
-      .catch(error => error);
-  }
-  static recoverPassword(id, token) {
-    return fetch(
-      apiRoutes.GET_USER_API(id),
-      request({
-        method: 'GET',
-        authorization: {
-          type: 'token',
-        },
-        token,
       }),
     )
       .then(res => res.json())

@@ -23,21 +23,35 @@ const defaultConfig = {
     api_url: process.env.REACT_APP_API_URL,
     csp: {
       directives: {
-        'connect-src': ["'self'", 'https://graph.facebook.com/v3.0/me'],
+        'connect-src': [
+          "'self'",
+          'https://graph.facebook.com/v3.1/me',
+          'https://sentry.io/api/',
+          'https://ipv4.icanhazip.com/',
+          'https://www.google-analytics.com/',
+        ],
         'default-src': ["'none'"],
-        'frame-src': ['staticxx.facebook.com', 'www.facebook.com'],
+        'manifest-src': ["'self'"],
+        'frame-src': ['staticxx.facebook.com', 'www.facebook.com', 'https://js.stripe.com/'],
         'script-src': [
           "'self'",
           "'unsafe-inline'",
           'https://connect.facebook.net/en_US/sdk.js',
           'https://www.google-analytics.com/analytics.js',
-          'https://cdn.ravenjs.com/3.25.2/raven.min.js',
-          'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.js',
+          'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.0.0/polyfill.min.js',
+          'https://js.stripe.com/v3/',
+          'http://www.googletagmanager.com/',
         ],
-        'style-src': ["'self'", "'unsafe-inline'"],
-        'img-src': ["'self'", 'www.facebook.com', 'https://www.google-analytics.com'],
-        'font-src': ["'self'", 'fonts.gstatic.com'],
-        'object-src': ["'none'"],
+        'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+        'img-src': [
+          "'self'",
+          'www.facebook.com',
+          'https://www.google-analytics.com',
+          'https:',
+          'data:;',
+        ],
+        'font-src': ["'self'", 'fonts.gstatic.com', 'https://fonts.googleapis.com'],
+        'object-src': ["'self'"],
         'block-all-mixed-content': true,
         'frame-ancestors': ["'none'"],
       },
@@ -51,6 +65,11 @@ const defaultConfig = {
     underscored: true,
   },
 };
+
+// HMR requires unsafe-eval in development mode
+if (process.env.NODE_ENV !== 'production') {
+  defaultConfig.app.csp.directives['script-src'].push("'unsafe-eval'");
+}
 
 const config = {
   development: {

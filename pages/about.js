@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import App from '~/components/Page';
 import Svg from '~/components/Svg';
@@ -6,7 +6,7 @@ import logo from '~/shared/media/images/picus-logo.jpg';
 import thumbsUp from '~/shared/media/images/icons/thumbs-up.svg';
 import styles from '~/shared/styles/pages/about.scss';
 
-class About extends PureComponent {
+class About extends Component {
   static async getInitialProps() {
     return {
       meta: {

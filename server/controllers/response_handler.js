@@ -1,4 +1,3 @@
-
 module.exports.validateRead = (res, resourceName, results) => {
   if (results) {
     res.status(200).send(results);

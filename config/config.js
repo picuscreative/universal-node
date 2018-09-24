@@ -67,7 +67,7 @@ const defaultConfig = {
 };
 
 // HMR requires unsafe-eval in development mode
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV !== 'production') {
   defaultConfig.app.csp.directives['script-src'].push("'unsafe-eval'");
 }
 

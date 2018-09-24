@@ -1,6 +1,6 @@
 module.exports = {
   testMatch: ['<rootDir>/client/**/*.test.js'],
-  setupFiles: ['<rootDir>/__tests__/setup/setupEnzyme.js'],
+  setupFiles: ['<rootDir>/config/setup/setupEnzyme.js'],
   testPathIgnorePatterns: [
     '<rootDir>/.next/',
     '<rootDir>/node_modules/',

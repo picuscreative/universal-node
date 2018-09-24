@@ -1,5 +1,5 @@
 {
-  "presets": [["next/babel", { "preset-env": { "modules": "commonjs" } }]],
+  "presets": ["next/babel"],
   "plugins": [
     ["babel-plugin-root-import", { "rootPathSuffix": "client" }],
     ["transform-class-properties"]

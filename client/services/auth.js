@@ -23,7 +23,9 @@ export default class Auth {
   };
 
   static getJwt = (ctx = {}) => getCookie('jwt', ctx.req);
+
   static getUserId = (ctx = {}) => getCookie('user_id', ctx.req);
+
   static isAuthenticated = ctx => !!Auth.getJwt(ctx);
 
   static redirectIfAuthenticated = (ctx, path = pageRoutes.ACCOUNT_DETAILS_PATH) => {

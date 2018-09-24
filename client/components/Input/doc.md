@@ -15,7 +15,7 @@ prop | type | default | required | description
 **handleChange** | `Function` |  | :x: | Value state setter
 **name** | `String` |  | :white_check_mark: | Name to be given to identify the input element
 **pattern** | `String` |  | :x: | Pattern for validating in case of HTML5
-**placeholder** | `String` |  | :white_check_mark: | Text that will appear in the element
+**placeholder** | `String` |  | :x: | Text that will appear in the element
 **type** | `String` |  | :x: | Definition of the input type
 **value** | `String` |  | :x: | Value to be given to the input element
 **withPadding** | `Boolean` |  | :x: | Allows to add a fixed padding

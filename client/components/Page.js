@@ -24,16 +24,6 @@ class Page extends PureComponent {
     user: PropTypes.object,
   };
 
-  static propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-    meta: PropTypes.object,
-    private: PropTypes.bool,
-    isAuthenticated: PropTypes.bool,
-    userId: PropTypes.string,
-    user: PropTypes.object,
-  };
-
   componentDidMount() {
     // load Sentry if it exists in env file (see README for configuration)
     if (process.env.REACT_APP_SENTRY_DSN) {

@@ -1,6 +1,10 @@
 {
   "extends": "stylelint-config-standard",
-  "plugins": ["stylelint-scss", "stylelint-order", "stylelint-no-unsupported-browser-features"],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order",
+    "stylelint-no-unsupported-browser-features"
+  ],
   "rules": {
     "plugin/no-unsupported-browser-features": [
       true,
@@ -8,11 +12,11 @@
         "browsers": [
           "> 3%",
           "Chrome >= 66",
-          "Firefox >= 58",
-          "Edge >= 16",
-          "Explorer >= 10",
+          "Firefox >= 59",
+          "Edge >= 15",
+          "Explorer >= 11",
           "Safari >= 11",
-          "iOS >= 9.2"
+          "iOS >= 10.3"
         ],
         "severity": "warning"
       }

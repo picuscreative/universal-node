@@ -89,7 +89,7 @@
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9.1.5",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "babel-plugin-root-import": "^6.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -125,11 +125,11 @@
   "browserslist": [
     "> 3%",
     "Chrome >= 66",
-    "Firefox >= 58",
-    "Edge >= 16",
-    "Explorer >= 10",
+    "Firefox >= 59",
+    "Edge >= 15",
+    "Explorer >= 11",
     "Safari >= 11",
-    "iOS >= 9.2"
+    "iOS >= 10.3"
   ],
   "engines": {
     "node": ">=8.11.1"

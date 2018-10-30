@@ -45,6 +45,7 @@
     ]
   },
   "dependencies": {
+    "@zeit/next-source-maps": "0.0.3",
     "assert": "^1.4.1",
     "bcrypt": "^3.0.1",
     "body-parser": "^1.18.3",
@@ -120,6 +121,7 @@
     "svgo": "^1.1.1",
     "svgo-loader": "^2.2.0",
     "testcafe": "^0.22.0",
+    "url-loader": "^1.1.2",
     "webpack-bundle-analyzer": "^3.0.2"
   },
   "browserslist": [

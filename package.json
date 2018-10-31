@@ -16,8 +16,6 @@
     "test": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test sequelize --seeders-path=./server/seeders db:seed:all && cross-env NODE_ENV=test testcafe chrome:headless tests/ --screenshots=./tests/screenshots/desktop --screenshots-on-fails",
     "test:desktop": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test sequelize --seeders-path=./server/seeders db:seed:all && cross-env NODE_ENV=test testcafe chrome:headless tests/desktop --screenshots=./tests/screenshots/desktop --screenshots-on-fails",
     "test:mobile": "cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate:undo:all && cross-env NODE_ENV=test sequelize --migrations-path=./server/migrations db:migrate && cross-env NODE_ENV=test sequelize --seeders-path=./server/seeders db:seed:all && cross-env NODE_ENV=test testcafe \"chrome:headless:emulation:device=iphone 5\" tests/mobile --screenshots=./tests/screenshots/mobile --screenshots-on-fails",
-    "test:jest": "jest",
-    "test:watch": "jest --watch",
     "db:migrate": "sequelize --migrations-path=./server/migrations db:migrate",
     "db:migrate:seeds": "sequelize --migrations-path=./server/migrations db:migrate && sequelize --seeders-path=./server/seeders db:seed:all",
     "dev": "cross-env NODE_ENV=development node index.js",
@@ -27,7 +25,7 @@
     "precommit": "lint-staged",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "analyze": "next build && cross-env NODE_ENV=production cross-env ANALYZE=1 node index.js",
-    "docs": "node ./client/utils/docsGen.js"
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "lint-staged": {
     "*.js": [
@@ -103,8 +101,6 @@
     "file-loader": "^2.0.0",
     "husky": "^1.0.0-rc.15",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^23.6.0",
-    "jest-cli": "^23.6.0",
     "lint-staged": "^7.3.0",
     "nock": "^10.0.0",
     "node-sass": "^4.9.3",

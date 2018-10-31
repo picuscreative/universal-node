@@ -133,7 +133,7 @@ This file is ignored in source control and it is intended to be created from `.e
 
 ## Browserslist
 
-By default, configurations for ESlint, Stylelint are "> 3%, Chrome >= 66, Firefox >= 58, Edge >= 16, Explorer >= 10, Safari >= 11, iOS >= 9.0" based on [browserl.ist](http://browserl.ist/?q=%3E+3%25%2C+Chrome+%3E%3D+66%2C+Firefox+%3E%3D+58%2C+Edge+%3E%3D+16%2C+Explorer+%3E%3D+10%2C+Safari+%3E%3D+11%2C+iOS+%3E%3D+9.2).
+By default, configurations for ESlint, Stylelint are "> 3%, Chrome >= 66, Firefox >= 59, Edge >= 15, Explorer >= 11, Safari >= 11, iOS >= 10.3" based on [browserl.ist](https://browserl.ist/?q=%3E+3%25%2C+Chrome+%3E%3D+66%2C+Firefox+%3E%3D+59%2C+Edge+%3E%3D+15%2C+Explorer+%3E%3D+11%2C+Safari+%3E%3D+11%2C+iOS+%3E%3D+10.3.2).
 
 ## LICENSE
 

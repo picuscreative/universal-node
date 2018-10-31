@@ -5,9 +5,10 @@ require('dotenv').config();
 const path = require('path');
 const webpack = require('webpack');
 const withSass = require('@zeit/next-sass');
+const withSourceMaps = require('@zeit/next-source-maps');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-module.exports = withSass({
+module.exports = withSass(withSourceMaps({
   distDir: 'public/dist',
   cssModules: true,
   cssLoaderOptions: {
@@ -86,4 +87,4 @@ module.exports = withSass({
 
     return config;
   },
-});
+}));

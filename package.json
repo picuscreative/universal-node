@@ -25,7 +25,7 @@
     "precommit": "lint-staged",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "analyze": "next build && cross-env NODE_ENV=production cross-env ANALYZE=1 node index.js",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "docs": "node ./client/utils/docsGen.js"
   },
   "lint-staged": {
     "*.js": [

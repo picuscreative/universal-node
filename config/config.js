@@ -38,6 +38,7 @@ const defaultConfig = {
           "'unsafe-inline'",
           'https://connect.facebook.net/en_US/sdk.js',
           'https://www.google-analytics.com/analytics.js',
+          'https://storage.googleapis.com/workbox-cdn/',
           'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.0.0/polyfill.min.js',
           'https://js.stripe.com/v3/',
           'http://www.googletagmanager.com/',

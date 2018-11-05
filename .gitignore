@@ -1,6 +1,7 @@
 .next
 coverage
-public/dist
+static/dist
+static/workbox
 tests/screenshots/**/*.png
 node_modules
 npm-debug.*

@@ -25,7 +25,7 @@
     "precommit": "lint-staged",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "analyze": "next build && cross-env NODE_ENV=production cross-env ANALYZE=1 node index.js",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "docs": "node ./client/utils/docsGen.js"
   },
   "lint-staged": {
     "*.js": [
@@ -50,8 +50,6 @@
     "classnames": "^2.2.6",
     "cross-env": "^5.2.0",
     "dotenv": "^6.0.0",
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
     "express": "^4.16.3",
     "express-validator": "^5.3.0",
     "faker": "^4.1.0",
@@ -68,7 +66,6 @@
     "prop-types": "^15.6.2",
     "raven-js": "^3.27.0",
     "react": "^16.5.2",
-    "react-detect-offline": "^2.1.2",
     "react-docgen": "^2.21.0",
     "react-docgen-markdown-renderer": "^1.1.0",
     "react-dom": "^16.5.2",
@@ -89,7 +86,6 @@
     "autoprefixer": "^9.1.5",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
     "babel-plugin-root-import": "^6.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "eslint": "^5.6.0",
@@ -102,6 +98,7 @@
     "husky": "^1.0.0-rc.15",
     "identity-obj-proxy": "^3.0.0",
     "lint-staged": "^7.3.0",
+    "next-workbox-webpack-plugin": "^1.1.0",
     "nock": "^10.0.0",
     "node-sass": "^4.9.3",
     "postcss": "^7.0.2",

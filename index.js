@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const hpp = require('hpp');
 const bodyParser = require('body-parser');
 const next = require('next');
+const { join } = require('path');
 const controllers = require('./server/controllers')(express);
 const config = require('./config/config');
 
@@ -20,10 +21,19 @@ app
     server.use(helmet());
     server.use(helmet.contentSecurityPolicy(config.app.csp));
     server.use(expressValidator());
-    server.use(express.static('public'));
+    server.use(express.static('static'));
 
     server.use('/api', controllers);
-    server.get('*', (req, res) => handle(req, res));
+    server.get('*', (req, res) => {
+      if (req.url.includes('/sw')) {
+        const filePath = join(__dirname, 'static', 'workbox', 'sw.js');
+        app.serveStatic(req, res, filePath);
+      } else if (req.url.startsWith('static/workbox/')) {
+        app.serveStatic(req, res, join(__dirname, req.url));
+      } else {
+        handle(req, res, req.url);
+      }
+    });
 
     server.listen(3000, (err) => {
       if (err) throw err;

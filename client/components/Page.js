@@ -3,14 +3,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Raven from 'raven-js';
-import { Offline, Online } from 'react-detect-offline';
 import Container from '~/components/Container';
-import Column from '~/components/Container/Column';
 /* eslint-disable no-unused-vars */
 import reboot from '~/shared/styles/reboot.scss';
 import globals from '~/shared/styles/globals.scss';
 /* eslint-enable no-unused-vars */
 import CustomHead from './CustomHead';
+import OfflineSupport from './OfflineSupport';
 import Header from './Header';
 
 class Page extends PureComponent {
@@ -48,21 +47,8 @@ class Page extends PureComponent {
           <Container fluid>
             <Header isAuthenticated={isAuthenticated} />
           </Container>
-          <Online>{children}</Online>
-          <Offline
-            onChange={() => {
-              setTimeout(() => {
-                /* eslint-disable no-restricted-globals */
-                location.reload();
-                /* eslint-enable no-restricted-globals */
-              }, 5000);
-            }}
-          >
-            <Column alignCenter>
-              <div>You are offline at the moment.</div>
-              <div>Please turn on your connection and refresh the page.</div>
-            </Column>
-          </Offline>
+          {children}
+          <OfflineSupport />
         </div>
       </Container>
     );

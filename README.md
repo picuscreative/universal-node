@@ -21,6 +21,7 @@ PICUS' template for universal Node/React applications. It offers you the require
 - ⛑ SEO friendly - provides control of title/meta from within your pages.
 - 📊 Google Analytics support.
 - 🐞 Error tracking with Sentry.
+- ⚙️ Offline mode with Service Workers.
 - 👮 Security on the `express` server using `helmet` and `hpp`.
 - 🏜 Asset bundling support. e.g. images/svgs/fonts.
 
@@ -68,7 +69,7 @@ Starts a development server.
 $ npm run build
 ```
 
-Builds the project for production, producing the bundled assets at `public/build`.
+Builds the project for production, producing the bundled assets.
 
 ### start
 

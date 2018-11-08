@@ -1,7 +1,7 @@
 {
   "name": "project-name",
   "version": "1.0.0",
-  "description": "The https://project-domain.com web app",
+  "description": "The https://project-name.com web app",
   "keywords": [
     "react",
     "next.js",
@@ -63,6 +63,7 @@
     "mysql2": "^1.6.1",
     "next": "^7.0.0",
     "next-redux-wrapper": "^2.0.0",
+    "pm2": "^3.2.2",
     "prop-types": "^15.6.2",
     "raven-js": "^3.27.0",
     "react": "^16.5.2",

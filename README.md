@@ -13,10 +13,10 @@ PICUS' template for universal Node/React applications. It offers you the require
 - 🎛 Preconfigured with `redux`.
 - 🚄 `express` server.
 - 🛢️ `sequelize` ORM for data persistence.
+- 📦 `pm2` for process management.
 - 👌 Airbnb's ESlint configuration and Standard Stylelint - performing code formatting on commit. Stop worrying about code style consistency.
 - 📝 `browserslist` to share target browsers between different front-end tools.
 - 🌍 Server Side Rendering with `next.js`.
-- 🖌 `postcss` support.
 - 🔧 Centralised application configuration with helpers to avoid boilerplate in your code. Also has support for environment variables.
 - ⛑ SEO friendly - provides control of title/meta from within your pages.
 - 📊 Google Analytics support.

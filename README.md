@@ -18,6 +18,7 @@ PICUS' template for universal Node/React applications. It offers you the require
 - 📝 `browserslist` to share target browsers between different front-end tools.
 - 🌍 Server Side Rendering with `next.js`.
 - 🔧 Centralised application configuration with helpers to avoid boilerplate in your code. Also has support for environment variables.
+- 💅 `styled-components` to style your apps without stress.
 - ⛑ SEO friendly - provides control of title/meta from within your pages.
 - 📊 Google Analytics support.
 - 🐞 Error tracking with Sentry.

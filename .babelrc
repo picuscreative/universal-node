@@ -2,6 +2,14 @@
   "presets": ["next/babel"],
   "plugins": [
     ["babel-plugin-root-import", { "rootPathSuffix": "client" }],
-    ["transform-class-properties"]
+    ["transform-class-properties"],
+    [
+      "styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
+      }
+    ]
   ]
 }

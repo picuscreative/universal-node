@@ -1,8 +1,16 @@
 /* eslint-disable quotes */
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
 class MainDocument extends Document {
+  static getInitialProps({ renderPage }) {
+    const sheet = new ServerStyleSheet();
+    const page = renderPage(App => props => sheet.collectStyles(<App {...props} />));
+    const styleTags = sheet.getStyleElement();
+    return { ...page, styleTags };
+  }
+
   render() {
     return (
       <html lang="en">
@@ -157,7 +165,7 @@ class MainDocument extends Document {
           <link rel="shortcut icon" href="/dist/static/favicons/favicon.ico" />
           <link rel="manifest" href="/dist/static/favicons/manifest.json" />
           <meta key="description" name="description" content="project-name description" />
-          <style jsx global>{`CRITICAL CSS`}</style>
+          {this.props.styleTags}
         </Head>
         <body>
           <Main />

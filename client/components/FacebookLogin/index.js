@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 /**
  * Facebook Login:
  * Authentication with Facebook
  */
-class FacebookLogin extends Component {
+class FacebookLogin extends PureComponent {
   static propTypes = {
     /**
      * Facebook App Id

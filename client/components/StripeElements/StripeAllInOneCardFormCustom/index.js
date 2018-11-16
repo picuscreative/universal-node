@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 /**
  * Stripe All In One Form Custom:
  * Card Payment with Card Number, Date, CVC
  */
-class StripeAllInOneCardFormCustom extends Component {
+class StripeAllInOneCardFormCustom extends PureComponent {
   constructor(props) {
     super(props);
     this.elements = props.stripe.elements();

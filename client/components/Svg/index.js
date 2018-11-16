@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import styles from './styles.scss';
 
 /**
  * Svg:
@@ -22,14 +20,6 @@ class Svg extends PureComponent {
      */
     svg: PropTypes.string.isRequired,
     /**
-     * Svg hover content
-     */
-    svgHover: PropTypes.string,
-    /**
-     * Svg selection
-     */
-    selected: PropTypes.bool,
-    /**
      * On click action callback
      */
     onClick: PropTypes.func,
@@ -37,19 +27,14 @@ class Svg extends PureComponent {
 
   render() {
     const {
-      id, className, svg, svgHover, selected, onClick,
+      id, className, svg, onClick,
     } = this.props;
 
     return (
       <div id={id} onClick={onClick} className={className}>
         <i
-          className={classNames(styles.i, className, selected ? styles.selected : '')}
           dangerouslySetInnerHTML={{
-            __html: svgHover
-              ? `<span class="${styles['svg-default']} ${className}">${svg}</span><span class="${
-                styles['svg-hover']
-              } ${className}">${svgHover}</span>`
-              : svg,
+            __html: svg,
           }}
         />
       </div>

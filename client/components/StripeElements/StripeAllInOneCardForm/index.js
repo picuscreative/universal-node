@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 
@@ -6,7 +6,7 @@ import { CardElement, injectStripe } from 'react-stripe-elements';
  * Stripe All In One Form:
  * Card Payment with Card Number, Date, CVC
  */
-class StripeAllInOneCardForm extends Component {
+class StripeAllInOneCardForm extends PureComponent {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);

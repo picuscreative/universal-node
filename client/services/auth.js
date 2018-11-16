@@ -2,6 +2,7 @@
 import redirect from '~/utils/redirect';
 import { setCookie, getCookie, removeCookies } from '~/utils/cookies';
 import { pageRoutes } from '~/config/routes';
+
 /**
  /* Authorization utilities and redirects
 */
@@ -28,7 +29,7 @@ export default class Auth {
 
   static isAuthenticated = ctx => !!Auth.getJwt(ctx);
 
-  static redirectIfAuthenticated = (ctx, path = pageRoutes.ACCOUNT_DETAILS_PATH) => {
+  static redirectIfAuthenticated = (ctx, path = pageRoutes.ACCOUNT_PATH) => {
     if (Auth.isAuthenticated(ctx)) {
       redirect(path, ctx);
       return true;

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import App from '~/components/Page';
+import Page from '~/components/Page';
 import Svg from '~/components/Svg';
-import logo from '~/shared/media/images/picus-logo.jpg';
+import { Row, Col } from '~/components/Grid';
 import thumbsUp from '~/shared/media/images/icons/thumbs-up.svg';
-import styles from '~/shared/styles/pages/about.scss';
 
 class About extends Component {
   static async getInitialProps() {
@@ -25,14 +24,15 @@ class About extends Component {
 
   render() {
     return (
-      <App {...this.props}>
-        <h1>PICUS Creative</h1>
-        <p>BRINGING AMAZING DIGITAL PRODUCTS TO LIFE.</p>
-        <Svg className={styles.icon} svg={thumbsUp} />
-        <a href="http://picuscreative.com" target="_blank" rel="noopener noreferrer">
-          <img width="100px" src={logo} alt="PICUS" />
-        </a>
-      </App>
+      <Page {...this.props}>
+        <Row>
+          <Col>
+            <h1>PICUS Creative</h1>
+            <p>BRINGING AMAZING DIGITAL PRODUCTS TO LIFE.</p>
+            <Svg svg={thumbsUp} />
+          </Col>
+        </Row>
+      </Page>
     );
   }
 }

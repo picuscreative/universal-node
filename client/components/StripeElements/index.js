@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { StripeProvider, Elements } from 'react-stripe-elements';
 import StripeAllInOneCardForm from '~/components/StripeElements/StripeAllInOneCardForm';
@@ -8,7 +8,7 @@ import StripeAllInOneCardFormCustom from '~/components/StripeElements/StripeAllI
  * StripeElements:
  * Load Stripe.js and include all-in-one Stripe form
  */
-class StripeElements extends Component {
+class StripeElements extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { stripe: null };
@@ -68,8 +68,8 @@ class StripeElements extends Component {
     } = this.props;
 
     return (
-      this.state.stripe &&
-      (custom ? (
+      this.state.stripe
+      && (custom ? (
         <StripeAllInOneCardFormCustom
           className={className}
           stripe={this.state.stripe}

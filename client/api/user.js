@@ -16,22 +16,6 @@ class UserApi {
       .catch(error => error);
   }
 
-  static login({ email, password }) {
-    return fetch(
-      apiRoutes.AUTH_USER_API,
-      request({
-        method: 'GET',
-        authorization: {
-          type: 'basic',
-          email,
-          password,
-        },
-      }),
-    )
-      .then(res => res.json())
-      .catch(error => error);
-  }
-
   static update(id, body) {
     return fetch(
       apiRoutes.UPDATE_USER_API(id),
@@ -73,18 +57,6 @@ class UserApi {
       }),
     )
       .then(res => res)
-      .catch(error => error);
-  }
-
-  static resetPassword(body) {
-    return fetch(
-      apiRoutes.RESET_USER_PASSWORD_API,
-      request({
-        method: 'POST',
-        body,
-      }),
-    )
-      .then(res => res.json())
       .catch(error => error);
   }
 }

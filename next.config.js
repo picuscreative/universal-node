@@ -72,6 +72,7 @@ module.exports = withSourceMaps({
 
     const workboxOptions = {
       clientsClaim: true,
+      removeDir: true,
       skipWaiting: true,
       globPatterns: ['.next/static/*', '.next/static/commons/*'],
       modifyUrlPrefix: {

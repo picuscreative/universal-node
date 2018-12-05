@@ -27,7 +27,6 @@ const defaultConfig = {
           "'self'",
           'https://graph.facebook.com/v3.1/me',
           'https://sentry.io/api/',
-          'https://ipv4.icanhazip.com/',
           'https://www.google-analytics.com/',
         ],
         'default-src': ["'none'"],

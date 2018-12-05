@@ -67,7 +67,7 @@
     "react-docgen": "^2.21.0",
     "react-docgen-markdown-renderer": "^1.1.0",
     "react-dom": "^16.5.2",
-    "react-redux": "^5.0.7",
+    "react-redux": "^6.0.0",
     "react-stripe-elements": "^2.0.1",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",

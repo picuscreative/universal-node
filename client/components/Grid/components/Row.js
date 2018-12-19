@@ -12,6 +12,17 @@ const Row = styled.div`
   flex: 0 1 auto;
   flex-wrap: wrap;
   flex-direction: row;
+  ${p =>
+    css`
+      ${DIMENSION_NAMES.map(
+        t =>
+          config(p).container[t] &&
+          config(p).media[t]`
+          margin-right: ${p => config(p).gutterWidth[t] / -2}px;
+          margin-left: ${p => config(p).gutterWidth[t] / -2}px;
+      `,
+      )}
+    `}
 
   ${p =>
     !p.fluid &&
@@ -38,7 +49,7 @@ const Row = styled.div`
 
   ${p =>
     p.center &&
-    config(p).media['md']`
+    config(p).media[p.center]`
     justify-content: center;
   `}
 
@@ -62,7 +73,7 @@ const Row = styled.div`
 
   ${p =>
     p.bottom &&
-    config(p).media['lg']`
+    config(p).media[p.bottom]`
     align-items: flex-end;
   `}
 

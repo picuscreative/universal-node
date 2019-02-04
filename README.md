@@ -104,7 +104,9 @@ Your project can consume variables declared in your environment by accessing the
 
 The following variables will be made available:
 
-- `SITE_URL`: The URL where the site will be running, e.g., `http://localhost:3000`
+- `SITE_URL`: The URL where the site will be running, e.g., `http://project-name.com`
+- `HOST`: The host where the site will be running, e.g., `localhost`
+- `PORT`: The port where the site will be running, e.g., `3000`
 - `DB_USER`: The user name used for database connection.
 - `DB_PASSWORD`: The user's password used for database connection.
 - `DB_HOST`: The database connection, the value can be a IP address or a domain.

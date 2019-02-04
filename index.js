@@ -9,6 +9,8 @@ const controllers = require('./server/controllers')(express);
 const config = require('./config/config');
 
 const dev = process.env.NODE_ENV !== 'production';
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 3000;
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
@@ -35,9 +37,9 @@ app
       }
     });
 
-    server.listen(3000, (err) => {
+    server.listen(port, host, (err) => {
       if (err) throw err;
-      console.log(`> Ready on ${process.env.SITE_URL}`);
+      console.log(`> Ready on ${host}:${process.env.PORT}`);
     });
   })
   .catch((ex) => {

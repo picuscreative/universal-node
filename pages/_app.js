@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import App, { Container } from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import { ThemeProvider } from 'styled-components';
+import Page from '~/components/Page';
 import makeStore from '~/utils/store';
 import Auth from '~/services/auth';
 import variablesStyle from '~/shared/styles/variables';
@@ -39,7 +40,9 @@ class MyApp extends App {
             <div>
               <RebootStyle />
               <GlobalStyle />
-              <Component {...pageProps} />
+              <Page {...pageProps}>
+                <Component {...pageProps} />
+              </Page>
             </div>
           </ThemeProvider>
         </Provider>

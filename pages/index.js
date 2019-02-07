@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import UserActions from '../client/actions/user';
-import Page from '../client/components/Page';
 import { Row, Col } from '~/components/Grid';
 
 class Index extends Component {
@@ -39,14 +38,12 @@ class Index extends Component {
   render() {
     const { user } = this.props;
     return (
-      <Page {...this.props}>
-        <Row>
-          <Col>
-            <h1>project-name</h1>
-            <p>Hello {user.email}</p>
-          </Col>
-        </Row>
-      </Page>
+      <Row>
+        <Col>
+          <h1>project-name</h1>
+          <p>Hello {user.email}</p>
+        </Col>
+      </Row>
     );
   }
 }

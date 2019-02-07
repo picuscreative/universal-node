@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Page from '~/components/Page';
 import Svg from '~/components/Svg';
 import { Row, Col } from '~/components/Grid';
 import thumbsUp from '~/shared/media/images/icons/thumbs-up.svg';
@@ -24,15 +23,13 @@ class About extends Component {
 
   render() {
     return (
-      <Page {...this.props}>
-        <Row>
-          <Col>
-            <h1>PICUS Creative</h1>
-            <p>BRINGING AMAZING DIGITAL PRODUCTS TO LIFE.</p>
-            <Svg svg={thumbsUp} />
-          </Col>
-        </Row>
-      </Page>
+      <Row>
+        <Col>
+          <h1>PICUS Creative</h1>
+          <p>BRINGING AMAZING DIGITAL PRODUCTS TO LIFE.</p>
+          <Svg svg={thumbsUp} />
+        </Col>
+      </Row>
     );
   }
 }

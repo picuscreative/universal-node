@@ -9,22 +9,22 @@ import Head from 'next/head';
 class CustomHead extends PureComponent {
   static propTypes = {
     /**
-     * Title meta tag content
+     * Meta tags content
      */
-    title: PropTypes.string,
-    /**
-     * Description meta tag content
-     */
-    description: PropTypes.string,
+    meta: PropTypes.string,
   };
 
   render() {
-    const { title, description } = this.props;
+    const { meta } = this.props;
     return (
       <div>
         <Head>
-          <title>{title}</title>
-          {description ? <meta key="description" name="description" content={description} /> : null}
+          <title>{meta.title || 'project-name'}</title>
+          <meta
+            key="description"
+            name="description"
+            content={meta.description || 'project-name description'}
+          />
           {/* any other meta tags */}
         </Head>
       </div>

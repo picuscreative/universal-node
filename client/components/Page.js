@@ -34,7 +34,7 @@ class Page extends PureComponent {
 
     return (
       <Grid fluid>
-        <CustomHead title={meta.title} description={meta.description} />
+        <CustomHead meta={meta} />
         <Header isAuthenticated={isAuthenticated} />
         {children}
         <OfflineSupport />
